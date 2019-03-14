@@ -1,0 +1,905 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body,
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+@media (min-width: 320px) {
+  body {
+    padding-top: 0px;
+  }
+}
+
+body {
+  font-family: "Roboto", serif, "Open Sans" !important;
+  font-weight: 300;
+}
+
+main ul {
+  margin-left: 50px;
+}
+
+strong {
+  font-weight: 600;
+}
+
+p {
+  padding: 1rem !important;
+  line-height: 1.5em;
+  font-size: 1.2em;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 800;
+  padding: 1rem !important;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 600;
+  padding: 1rem !important;
+}
+
+h3 {
+  font-size: 1.8em;
+  font-weight: 400;
+  padding: 1rem !important;
+}
+
+h4 {
+  font-size: 1.9em;
+  font-weight: 400;
+  padding: 1rem !important;
+}
+
+h5 {
+  font-size: 1.8em;
+  padding: 1rem !important;
+}
+
+header .main-heading {
+  font-weight: 100;
+  font-size: 3em;
+}
+
+header .main-heading span {
+  font-weight: 900;
+}
+
+.content-header {
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.primary-bg-color {
+  background-color: #f16522;
+}
+
+.lf-primary-button {
+  background: #f16522;
+  border: 2px solid #fff;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  color: white;
+  cursor: pointer;
+}
+
+.lf-secondary-button {
+  background-color: #FFBF2D;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.jumbotron {
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #f16522;
+  height: 90vh;
+}
+
+.jumbotron span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 2.4em;
+  text-align: center;
+  display: block;
+}
+
+.jumbotron div:nth-child(1) {
+  background-size: cover;
+  height: 100%;
+  background-position: center;
+}
+
+.jumbotron .home-cover {
+  background-image: url("/assets/gif/home-cover-mobile.gif");
+}
+
+.jumbotron .treatments-cover {
+  background-image: url("/assets/gif/treatments-cover-mobile.gif");
+}
+
+.jumbotron .testimonials-cover {
+  background-image: url("/assets/gif/testimonials-cover-mobile.gif");
+}
+
+.jumbotron .courses-cover {
+  background-image: url("/assets/gif/courses-cover-mobile.gif");
+}
+
+.jumbotron .traditional-chinese-medicine-cover {
+  background-image: url("/assets/gif/traditional-chinese-medicine-cover-mobile.gif");
+}
+
+.jumbotron .massage-cover {
+  background-image: url("/assets/gif/massage-cover-mobile.gif");
+}
+
+.jumbotron .reiki-cover {
+  background-image: url("/assets/gif/reiki-cover-mobile.gif");
+}
+
+.jumbotron .sacred-crystal-healing-cover {
+  background-image: url("/assets/gif/sacred-crystal-healing-cover-mobile.gif");
+}
+
+.jumbotron .inka-shamanic-healing-cover {
+  background-image: url("/assets/gif/inka-shamanic-healing-cover-mobile.gif");
+}
+
+.jumbotron .book-now-cover {
+  background-image: url("/assets/gif/book-now-cover-mobile.gif");
+}
+
+@media (min-width: 992px) {
+  .jumbotron div:nth-child(1) {
+    background-size: cover;
+    height: 100%;
+  }
+
+  .jumbotron .home-cover {
+    background-image: url("/assets/gif/home-cover.gif");
+  }
+
+  .jumbotron .treatments-cover {
+    background-image: url("/assets/gif/treatments-cover.gif");
+  }
+
+  .jumbotron .testimonials-cover {
+    background-image: url("/assets/gif/testimonials-cover.gif");
+  }
+
+  .jumbotron .courses-cover {
+    background-image: url("/assets/gif/courses-cover.gif");
+  }
+
+  .jumbotron .traditional-chinese-medicine-cover {
+    background-image: url("/assets/gif/traditional-chinese-medicine-ccover.gif");
+  }
+
+  .jumbotron .massage-cover {
+    background-image: url("/assets/gif/massage-cover.gif");
+  }
+
+  .jumbotron .reiki-cover {
+    background-image: url("/assets/gif/reiki-cover.gif");
+  }
+
+  .jumbotron .sacred-crystal-healing-cover {
+    background-image: url("/assets/gif/sacred-crystal-healing-cover.gif");
+  }
+
+  .jumbotron .inka-shamanic-healing-cover {
+    background-image: url("/assets/gif/inka-shamanic-healing-cover.gif");
+  }
+
+  .jumbotron .book-now-cover {
+    background-image: url("/assets/gif/book-now-cover.gif");
+  }
+}
+
+.gallery .row {
+  padding: 15px 0;
+}
+
+.gallery .col-lg-4 {
+  position: relative;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery .img-overlay img {
+  cursor: pointer;
+  width: auto;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  transition: 0.5s ease;
+}
+
+.gallery .img-overlay:hover {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+body {
+  background-color: #fff;
+}
+
+.tabs {
+  font-size: 1.4em;
+  color: #ddd;
+  margin-top: 2em;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  background-color: #666;
+}
+
+.tabs li {
+  cursor: pointer;
+  padding: 14px 1.4em;
+  background-color: #666;
+}
+
+.tabs li:hover {
+  background-color: #EE3A39;
+  color: #fff;
+}
+
+.tabs .active {
+  color: #000;
+  background-color: #efefef;
+}
+
+@media (min-width: 768px) {
+  .tabs li {
+    float: none;
+  }
+}
+
+@media (min-width: 768px) and (min-width: 992px) {
+  .tabs li {
+    float: left;
+  }
+}
+
+.tabs_content {
+  padding-bottom: 5em;
+  clear: both;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.tabs_content li {
+  color: #000;
+  background-color: #efefef;
+  padding: 2.5em 3em;
+  display: none;
+}
+
+.card-container h2,
+.card-container p {
+  color: #fff !important;
+}
+
+.card-container .front h2 {
+  text-align: right;
+}
+
+.card-container {
+  padding: 0;
+}
+
+.plus-sign {
+  font-size: 4em;
+  position: absolute;
+  color: white;
+  left: 50%;
+  top: 80%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.flip-container {
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+/*  UPDATED! flip the pane when hovered */
+
+.flip-container:hover .back {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+.flip-container:hover .front {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+/* adjust card width and height */
+
+.flip-container,
+.front,
+.back {
+  height: 400px;
+  width: 100%;
+}
+
+.flipper .back {
+  background: #f16522;
+}
+
+/* Set Images */
+
+.card-container:nth-child(1) .flip-container .front {
+  background-image: url("/assets/gif/traditional-chinese-medicine.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-container:nth-child(2) .flip-container .front {
+  background-image: url("/assets/gif/sacred-crystal-healing.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-container:nth-child(3) .flip-container .front {
+  background-image: url("/assets/gif/inca-shamanic-healing.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-container:nth-child(4) .flip-container .front {
+  background-image: url("/assets/gif/reiki-healing.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Front Content */
+
+.front .content {
+  position: absolute;
+  display: block;
+  bottom: 10%;
+  right: 5%;
+}
+
+/* Back Content */
+
+.back .content {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  width: 85%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/* flip speed goes here */
+
+.flipper {
+  transition: 1s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: relative;
+}
+
+/* hide back of pane during swap */
+
+.front,
+.back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: 1s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+
+.back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+/*	Some vertical flip updates */
+
+.vertical.flip-container {
+  position: relative;
+}
+
+.vertical .back {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+.vertical.flip-container:hover .back {
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+}
+
+.vertical.flip-container:hover .front {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+#map {
+  height: 86vh;
+  background-color: grey;
+}
+
+.main-navigation {
+  top: 0;
+  height: 140px;
+  padding: 2rem 0;
+  width: 100%;
+  opacity: 0.92;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0);
+  /*
+      .item:hover .sub-menu, .sub-menu:hover {
+        display: block;
+      }
+  
+  
+      .sub-menu {
+        display: none;
+        position: absolute;
+        border-top: $primary-color 2px solid;
+        margin-top: 40px;
+        padding-left: 5px;
+        top: 0;
+        left: 0;
+        text-align: left;
+        margin-left: 0;
+      }
+  
+      .sub-menu-item {
+        padding: 5px 0;
+      }
+  
+      .sub-menu-item a:hover {
+        color: $primary-color;
+      }
+  
+  */
+}
+
+.main-navigation .logo {
+  padding: 0.5rem 0;
+}
+
+.main-navigation ul {
+  list-style: none;
+  white-space: nowrap;
+}
+
+.main-navigation .item {
+  display: inline-block;
+  position: relative;
+  padding: 10px 5px;
+}
+
+.main-navigation a {
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .main-navigation ul {
+    margin-top: 20px;
+  }
+
+  .main-navigation .item {
+    font-size: 0.9em;
+  }
+
+  .main-navigation svg {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-navigation ul {
+    margin-top: 30px;
+  }
+
+  .main-navigation .item {
+    font-size: 1em;
+  }
+}
+
+.mobile-navigation {
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  width: 100%;
+  padding: 8px;
+  z-index: 10000;
+}
+
+.mobile-navigation #hamburger-button-container button {
+  position: absolute;
+  background: #f16522;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #f16522;
+}
+
+.mobile-navigation svg {
+  width: 60%;
+}
+
+.mobile-navigation ul {
+  list-style: none;
+  white-space: nowrap;
+}
+
+.mobile-navigation #navbarToggleExternalContent {
+  border-top: 2px solid #f16522;
+  border-bottom: 2px solid #f16522;
+  padding-bottom: 30px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.mobile-navigation #nav-menu {
+  margin-left: 50px;
+}
+
+.mobile-navigation #nav-menu .item > a {
+  display: block;
+  padding: 10px 0 10px;
+  width: 85%;
+  border-bottom: 1px solid #ccc;
+}
+
+.mobile-navigation #nav-menu .sub-menu-item > a {
+  display: block;
+  padding: 2px 0 2px;
+}
+
+.mobile-navigation #nav-menu a {
+  color: #ccc;
+}
+
+.mobile-navigation #nav-menu .sub-menu-item {
+  padding: 5px 0;
+}
+
+.sub-menu {
+  margin-left: 25px;
+}
+
+.contact-sidebar ul {
+  list-style: none;
+  margin-left: 20px;
+}
+
+.main-wrapper {
+  margin: 70px auto !important;
+}
+
+#secondary-menu {
+  margin-bottom: 50px;
+  background-color: #f16522;
+}
+
+#secondary-menu .menu {
+  text-align: center;
+}
+
+#secondary-menu .menu li {
+  padding: 25px 10px;
+}
+
+#secondary-menu .menu li a {
+  color: #fff;
+}
+
+@media (min-width: 992px) {
+  #secondary-menu .menu li {
+    display: inline-block;
+  }
+}
+
+footer {
+  background: #eee;
+  color: #f16522;
+}
+
+footer ul {
+  list-style: none;
+  margin-left: 20px;
+}
+
+.site-info {
+  background: #f16522;
+  color: white;
+}
+
+.card-shadow {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+/** Row 1 Starts Here **/
+
+.row-1 .card {
+  padding: 20px 25px;
+  max-width: 100%;
+}
+
+.row-1 .column-1 .img-wrap img {
+  margin-top: 50px;
+  width: 87%;
+}
+
+.row-1 .column-2 {
+  margin: 70px 0;
+  z-index: 200;
+}
+
+/** Row 1 Ends Here **/
+
+/** Row 2 Starts Here **/
+
+.row-2 {
+  margin: 100px 0 !important;
+  padding: 0;
+  color: white;
+}
+
+.row-2 .column-1 {
+  z-index: 1000;
+}
+
+.row-2 .column-1 .inner-text {
+  padding: 120px 20px;
+}
+
+.row-2 .column-1 .inner-text h2 {
+  font-size: 52px;
+}
+
+.row-2 .column-1 .inner-text p {
+  font-size: 2em;
+}
+
+.row-2 .column-2 img {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .row-2 {
+    position: relative;
+    top: -251px;
+  }
+
+  .row-2 .column-1 .inner-text {
+    max-width: 1000px;
+  }
+
+  .row-2 .column-2 img {
+    display: block;
+    position: absolute;
+    top: 125px;
+    right: 0;
+    width: 70%;
+  }
+}
+
+@media (min-width: 992px) {
+  .row-2 {
+    position: relative;
+    top: -255px;
+  }
+}
+
+/** Row 2 Ends Here **/
+
+.row-3 {
+  padding: 0;
+}
+
+.row-4 {
+  margin: 100px auto;
+}
+
+.row-4 .card {
+  padding: 80px 25px;
+}
+
+.row-4 .column-1 img {
+  width: 100%;
+}
+
+.row-5 {
+  margin: 100px auto;
+}
+
+.row-5 .card {
+  padding: 80px 25px;
+  z-index: 1000;
+}
+
+.row-5 .column-2 img {
+  width: 100%;
+}
+
+.services-menu ul {
+  list-style-type: none;
+}
+
+.services-menu a {
+  color: #444;
+  border-bottom: 1px solid #d2d2d2;
+  padding: 11px 15px;
+  display: block;
+  text-decoration: none;
+}
+

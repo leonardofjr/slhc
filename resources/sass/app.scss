@@ -1,38 +1,14 @@
-// Helpers (contains global mixins, functions, helper selectors, etc.)
-@import './helpers/variables.scss';
-@import './helpers/mixins.scss';
 
-// Base (contains global styles, such as resets, typography, colors, etc.)
-@import './base/reset.scss';
-@import './base/typography.scss';
-@import './base/colors.scss';
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Components (contains each self-contained component in its own .scss partial)
-@import './components/jumbotron.scss';
-@import './components/gallery.scss';
-@import './components/dynamic-tab-integration.scss';
-@import './components/flip-cards.scss';
-@import './components/map.scss';
+// Variables
+@import 'variables';
 
-// Layout (contains styling for larger layout components; e.g. nav, header, footer, )
-@import './layout/header.scss';
-@import './layout/navigation.scss';
-@import './layout/sidebar.scss';
-@import './layout/main.scss';
-@import './layout/secondary-menu.scss';
-@import './layout/footer.scss';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
 
-// Pages (contains page-specific styling, if necessary)
-@import './pages/home.scss';
-@import './pages/about.scss';
-@import './pages/services.scss';
-@import './pages/case-studies.scss';
-@import './pages/work.scss';
-@import './pages/support.scss';
-@import './pages/contact.scss';
-
-// Themes (contains styling for different themes)
-@import './themes/theme.scss';
-@import './themes/admin.scss';
-
-// Vendors (contains 3rd-party styles, mixins, etc.)
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}

@@ -1,0 +1,37 @@
+// Helpers (contains global mixins, functions, helper selectors, etc.)
+@import './helpers/variables.scss';
+@import './helpers/mixins.scss';
+
+// Base (contains global styles, such as resets, typography, colors, etc.)
+@import './base/reset.scss';
+@import './base/typography.scss';
+@import './base/colors.scss';
+
+// Components (contains each self-contained component in its own .scss partial)
+@import './frontend/components/jumbotron.scss';
+@import './frontend/components/gallery.scss';
+@import './frontend/components/dynamic-tab-integration.scss';
+@import './frontend/components/flip-cards.scss';
+@import './frontend/components/map.scss';
+
+// Layout (contains styling for larger layout components; e.g. nav, header, footer, )
+@import './frontend/layout/header.scss';
+@import './frontend/layout/navigation.scss';
+@import './frontend/layout/sidebar.scss';
+@import './frontend/layout/main.scss';
+@import './frontend/layout/secondary-menu.scss';
+@import './frontend/layout/footer.scss';
+
+// Pages (contains page-specific styling, if necessary)
+@import './frontend/pages/home.scss';
+@import './frontend/pages/about.scss';
+@import './frontend/pages/services.scss';
+@import './frontend/pages/case-studies.scss';
+@import './frontend/pages/work.scss';
+@import './frontend/pages/support.scss';
+@import './frontend/pages/contact.scss';
+
+// Themes (contains styling for different themes)
+@import './frontend/themes/theme.scss';
+
+// Vendors (contains 3rd-party styles, mixins, etc.)
