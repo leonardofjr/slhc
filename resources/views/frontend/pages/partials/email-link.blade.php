@@ -1,0 +1,1 @@
+<a href="mailto:{{$company_email}}"> {{$company_email}}</a>

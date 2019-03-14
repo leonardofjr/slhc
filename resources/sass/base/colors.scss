@@ -1,0 +1,25 @@
+.content-header {
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.primary-bg-color {
+    background-color: $primary-color;
+}
+
+.lf-primary-button {
+    @include btn-border-line($primary-color, #fff);
+    color: white;
+    cursor: pointer;
+}
+.lf-secondary-button {
+    background-color: #FFBF2D;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}

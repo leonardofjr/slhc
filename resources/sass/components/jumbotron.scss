@@ -1,0 +1,136 @@
+.jumbotron {
+    margin: 0!important;
+    padding: 0!important; 
+    background-color: $primary-color;
+    height: 90vh;
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 2.4em;
+        text-align: center;
+        display: block;
+    }
+
+    div:nth-child(1) {
+        background-size: cover;
+        height: 100%;
+        background-position: center;
+      
+    }
+
+
+ 
+        .home-cover {
+            background-image: url("/assets/gif/home-cover-mobile.gif");
+
+        }
+
+
+        .treatments-cover {
+            background-image: url("/assets/gif/treatments-cover-mobile.gif");
+
+        }
+
+        .testimonials-cover {
+            background-image: url("/assets/gif/testimonials-cover-mobile.gif");
+
+        }
+
+        .courses-cover {
+            background-image: url("/assets/gif/courses-cover-mobile.gif");
+
+        }
+
+        .traditional-chinese-medicine-cover {
+            background-image: url("/assets/gif/traditional-chinese-medicine-cover-mobile.gif");
+
+        }
+
+        .massage-cover {
+            background-image: url("/assets/gif/massage-cover-mobile.gif");
+
+        }
+
+        .reiki-cover {
+            background-image: url("/assets/gif/reiki-cover-mobile.gif");
+
+        }
+
+        .sacred-crystal-healing-cover {
+            background-image: url("/assets/gif/sacred-crystal-healing-cover-mobile.gif");
+
+        }
+
+        .inka-shamanic-healing-cover {
+            background-image: url("/assets/gif/inka-shamanic-healing-cover-mobile.gif");
+
+        }
+
+        .book-now-cover {
+            background-image: url("/assets/gif/book-now-cover-mobile.gif");
+
+        }
+   
+
+        @include breakpoint(md) {
+            div:nth-child(1) {
+                background-size: cover;
+                height: 100%;
+            }
+            .home-cover {
+                background-image: url("/assets/gif/home-cover.gif");
+               
+            }
+
+
+            .treatments-cover {
+                background-image: url("/assets/gif/treatments-cover.gif");
+               
+            }
+
+            .testimonials-cover {
+                background-image: url("/assets/gif/testimonials-cover.gif");
+               
+            }
+
+            .courses-cover {
+                background-image: url("/assets/gif/courses-cover.gif");
+               
+            }
+
+            .traditional-chinese-medicine-cover {
+                background-image: url("/assets/gif/traditional-chinese-medicine-ccover.gif");
+               
+            }
+
+            .massage-cover {
+                background-image: url("/assets/gif/massage-cover.gif");
+               
+            }
+
+            .reiki-cover {
+                background-image: url("/assets/gif/reiki-cover.gif");
+               
+            }
+
+            .sacred-crystal-healing-cover {
+                background-image: url("/assets/gif/sacred-crystal-healing-cover.gif");
+               
+            }
+
+            .inka-shamanic-healing-cover {
+                background-image: url("/assets/gif/inka-shamanic-healing-cover.gif");
+               
+            }
+
+            .book-now-cover {
+                background-image: url("/assets/gif/book-now-cover.gif");
+               
+            }
+        }
+
+}

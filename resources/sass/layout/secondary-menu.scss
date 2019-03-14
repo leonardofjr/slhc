@@ -1,0 +1,21 @@
+
+#secondary-menu {
+    margin-bottom: 50px;
+    background-color: $primary-color;
+    
+    .menu {
+        text-align: center;
+    }
+    .menu li {
+        padding: 25px 10px;
+    }
+    .menu li a {
+        color: #fff;
+    }
+
+    @include breakpoint(md) {
+        .menu li {
+            display: inline-block;
+        }
+    }
+}

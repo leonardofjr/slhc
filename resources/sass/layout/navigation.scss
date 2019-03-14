@@ -1,0 +1,140 @@
+.main-navigation {
+    top: 0;
+    height:140px;
+    padding: 2rem 0;
+    width: 100%;
+    opacity: .92;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    
+    .logo {
+      padding: .5rem 0;
+    }
+    ul {
+      list-style: none;    
+      white-space: nowrap;
+    }
+    .item {
+      display: inline-block;
+      position: relative;
+      padding: 10px 5px;
+    }
+/*
+    .item:hover .sub-menu, .sub-menu:hover {
+      display: block;
+    }
+
+
+    .sub-menu {
+      display: none;
+      position: absolute;
+      border-top: $primary-color 2px solid;
+      margin-top: 40px;
+      padding-left: 5px;
+      top: 0;
+      left: 0;
+      text-align: left;
+      margin-left: 0;
+    }
+
+    .sub-menu-item {
+      padding: 5px 0;
+    }
+
+    .sub-menu-item a:hover {
+      color: $primary-color;
+    }
+
+*/
+    a {
+          color: #fff;
+
+    }
+
+
+
+    @include breakpoint(sm) {
+      ul {
+         margin-top: 20px;
+      }
+     
+   
+      .item {
+          font-size: .9em;
+      }
+      svg {
+    
+          width: 100%;
+      }
+    }
+
+
+    @include breakpoint(md) {
+      ul {
+         margin-top: 30px;
+      }
+ 
+      .item {
+          font-size: 1em;
+      }
+    }
+
+    @include breakpoint(lg) {
+
+
+    }
+}
+
+
+
+.mobile-navigation  {
+  background: rgba(0, 0, 0, .9);
+  position: fixed;
+  width: 100%;
+  padding: 8px;    
+  z-index: 10000;
+
+  #hamburger-button-container button {
+        position: absolute;
+    background: #f16522;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $primary-color;
+  }
+  svg {
+    width: 60%;
+  }
+  ul {
+    list-style: none;    
+    white-space: nowrap;
+  }
+#navbarToggleExternalContent {
+  border-top: 2px solid $primary-color;
+  border-bottom: 2px solid $primary-color;
+  padding-bottom: 30px;
+    max-height: 280px;
+    overflow-y: auto;
+}
+  #nav-menu {
+    margin-left: 50px;
+  }
+  #nav-menu .item > a {
+    display: block;
+    padding: 10px 0 10px;
+    width: 85%;
+    border-bottom: 1px solid #ccc;
+  }
+  #nav-menu .sub-menu-item > a {
+    display: block;
+    padding: 2px 0 2px;
+  }
+  #nav-menu a {
+    color: #ccc;
+  }
+   #nav-menu .sub-menu-item {
+     padding: 5px 0;
+    
+   }
+}
+

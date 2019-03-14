@@ -1,0 +1,35 @@
+.gallery {
+    .row {
+        padding: 15px 0;
+    }
+    .col-lg-4 {
+    position: relative;
+    }
+    img {
+    width: 100%;
+    height: auto;
+    display: block;
+     
+    }
+
+    .img-overlay img {
+    cursor: pointer;
+    width: auto;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 1;
+    transition: .5s ease;
+    }
+    
+    .img-overlay:hover {
+        animation-name: fade;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes fade {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+}

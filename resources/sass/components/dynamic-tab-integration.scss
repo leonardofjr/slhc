@@ -1,0 +1,61 @@
+// Variables
+$tabsBG: #666;
+$tabsTextColor: #ddd;
+$activeTabBG: #efefef;
+$activeTabsTextColor: #000;
+$tabContentBG: #efefef;
+$tabContentTextColor: #000;
+$tabHoverBG: #EE3A39;
+$tabTextColor: #fff;
+body {
+  background-color: #fff;
+}
+.tabs  {
+      font-size: 1.4em;
+      color: $tabsTextColor;
+      margin-top: 2em;
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style-type: none; 
+      background-color: $tabsBG;
+      li   {
+      cursor: pointer;
+      padding: 14px 1.4em;
+      background-color: $tabsBG;
+    }
+    li:hover {
+      background-color: $tabHoverBG;
+      color: $tabTextColor;
+    }
+    .active {
+      color: $activeTabsTextColor;
+      background-color: $activeTabBG;
+    }
+    @include breakpoint(sm) {
+      li {
+        float: none;
+      }
+
+    @include breakpoint(md) {
+      li {
+        float: left;
+      }
+     }
+
+    }
+  }
+
+  // Hiding all tab content
+.tabs_content {
+  padding-bottom: 5em;
+  clear: both;
+  padding-left: 0;
+  list-style-type: none;
+  li {
+    color: $tabContentTextColor;
+      background-color: $tabContentBG;
+  padding: 2.5em 3em;
+    display: none;
+  }
+}
+
