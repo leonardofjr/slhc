@@ -59,4 +59,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('/home', 'BackendController@index')->name('Settings');
+Route::get('/services', 'BackendController@services')->name('Services');
+Route::get('/services/post', 'BackendController@services_post')->name('Post Service');

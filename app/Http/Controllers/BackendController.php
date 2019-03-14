@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Backend\ServicesController;
 
-class HomeController extends Controller
+class BackendController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -24,5 +25,15 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+    public function services()
+    {
+        $service = new ServicesController;
+        $data = $service->index();
+        return view('backend.services.services_page')->withData($data);
+    }
+    public function services_post()
+    {
+        return view('backend.services.subpages.post_service');
     }
 }
