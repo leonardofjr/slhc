@@ -21,6 +21,7 @@ Route::get('/', ['as' => 'Home', 'uses' => 'PagesController@getHomepage']);
 Route::get('/who-are-we',  ['as' => 'Who Are We', 'uses' => 'PagesController@getWhoAreWePage']);
 // ** Treatments ** //
 Route::get('/treatments',  ['as' => 'Treatments', 'uses' => 'PagesController@getTreatmentsPage']);
+Route::get('/treatments/{slug}',  ['as' => 'Treatments', 'uses' => 'PagesController@getTreatmentPage']);
 // ** Subpages  ** //
 Route::get('/treatments/traditional-chinese-medicine', ['as' => 'Traditional Chinese Medicine', 'uses' => 'TreatmentPagesController@getTraditionalChineseMedicinePage']);
 Route::get('/treatments/sacred-crystal-healing', ['as' => 'Sacred Crystal Healing', 'uses' => 'TreatmentPagesController@getSacredCrystalHealing']);
@@ -59,6 +60,14 @@ Route::group(['middleware' => 'auth'], function () {
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'BackendController@index')->name('Settings');
-Route::get('/services', 'BackendController@services')->name('Services');
-Route::get('/services/post', 'BackendController@services_post')->name('Post Service');
+Route::get('/home', 'BackendController@index')->name('Settings')->middleware('verified');
+Route::get('/services', 'BackendController@services')->name('Services')->middleware('verified');
+Route::get('/services/{id}', 'BackendController@show')->name('Edit Service')->middleware('verified');
+Route::get('/post_service', 'BackendController@services_post')->name('Post Service')->middleware('verified');
+
+
+Route::get('/reviews', 'ReviewsController@index')->name('Reviews')->middleware('verified');
+Route::get('/reviews/{id}', 'ReviewsController@edit')->name('Edit Review')->middleware('verified');
+Route::get('/post_review', 'ReviewsController@create')->name('Post Review')->middleware('verified');
+
+

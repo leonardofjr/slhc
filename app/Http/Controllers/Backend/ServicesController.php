@@ -34,6 +34,7 @@ class ServicesController extends Controller
        $service->short_description =  $request->short_description;
        $service->detailed_description =  $request->detailed_description;
        $service->save();
+       return redirect('/services');
     }
 
     /**
@@ -64,9 +65,17 @@ class ServicesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Request $request)
     {
-        //
+        $service = Service::findOrFail($id);
+        $service->service_name =  $request->service_name;
+        $service->slug =  $request->slug;
+        $service->duration =  $request->service_duration;
+        $service->service_price =  $request->service_price;
+        $service->short_description =  $request->short_description;
+        $service->detailed_description =  $request->detailed_description;
+        $service->save();
+        return redirect('/services');
     }
 
     /**
@@ -89,6 +98,9 @@ class ServicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $service = Service::findOrFail($id);
+        $service->delete();
+        return redirect('/services');
+
     }
 }

@@ -4,6 +4,8 @@
     use Mail;
     use Illuminate\Routing\Controller;
     use App\Post; 
+    use App\Service; 
+    use App\Http\Controllers\Backend\ServicesController; 
     use DB;
     use Storage;  
     use Route;  
@@ -21,7 +23,15 @@
          } // getWhoAreWePage() Ends Here
 
          public function getTreatmentsPage() {
-            return view('frontend.pages.treatments');
+            $services = new ServicesController;
+            $data = $services->index();
+            return view('frontend.pages.treatments')->withData($data);
+         }  // getTreatmentsPage() Ends Here
+
+
+         public function getTreatmentPage($slug) {
+            $data = Service::where('slug', $slug)->firstOrFail();
+            return view('frontend.pages.subpages.treatments.treatment')->withData($data);
          }  // getTreatmentsPage() Ends Here
 
 

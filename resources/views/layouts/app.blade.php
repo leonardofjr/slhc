@@ -15,9 +15,11 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link  href="/css/croppie.css" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
 </head>
 <body>
     <div id="app">
@@ -82,6 +84,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ route('Services') }}">Services</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ route('Reviews') }}">Reviews</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-md-10">
@@ -98,4 +103,14 @@
         </main>
     </div>
 </body>
+<script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+
+<script src="/js/croppie.js"></script>
+<script src="/js/functions.js"></script>
+
+
 </html>
