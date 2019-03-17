@@ -23,3 +23,7 @@ Route::delete('/services/{id}', 'Backend\ServicesController@destroy')->name('Del
 Route::put( '/reviews/{id}', 'ReviewsController@update');
 Route::post('/reviews', 'ReviewsController@store');
 Route::delete('/reviews/{id}', 'ReviewsController@destroy');
+
+Route::put('/settings/{id}', 'SettingsController@update');
+Route::post('/reviews', 'ReviewsController@store');
+Route::delete('/reviews/{id}', 'ReviewsController@destroy');

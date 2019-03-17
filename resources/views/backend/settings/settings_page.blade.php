@@ -2,7 +2,7 @@
 
 @section('content')
 <h2>{{\Request::route()->getName()}}</h2>
-<form action="/api/reviews/{{$data->id}}" method="POST">    
+<form action="/api/settings/{{$data->id}}" method="POST">    
         <input type="hidden" name="_method" value="put" />
         <div class="form-group row">
             <label class="col-sm-2 col-form-label" for="fname">Business Name</label>

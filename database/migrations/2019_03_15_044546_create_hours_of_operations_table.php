@@ -15,7 +15,7 @@ class CreateHoursOfOperationsTable extends Migration
     {
         Schema::create('hours_of_operations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('settings_id')->default(1);
+            $table->integer('settings_id');
             $table->integer('day');
             $table->time('start');
             $table->time('end');

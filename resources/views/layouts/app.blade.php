@@ -76,8 +76,13 @@
 
         <main class="py-4 container">
             <div class="row">
+                @if(Auth::user())
                 <div class="col-md-2">
                     <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ route('Welcome') }}">Home</a>
+                        </li>
+                        @if(Auth::user()->hasRole('Admin'))
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ route('Users') }}">Users</a>
                         </li>
@@ -90,9 +95,16 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ route('Reviews') }}">Reviews</a>
                         </li>
+                        @endif
+
                     </ul>
                 </div>
+                @endif
+                @if(Auth::user())
                 <div class="col-md-10">
+                @else
+                <div class="col-md-12">
+                @endif
                        <div class="card">
                             <div class="card-header">Dashboard</div>
 
