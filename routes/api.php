@@ -27,3 +27,7 @@ Route::delete('/reviews/{id}', 'ReviewsController@destroy');
 Route::put('/settings/{id}', 'SettingsController@update');
 Route::post('/reviews', 'ReviewsController@store');
 Route::delete('/reviews/{id}', 'ReviewsController@destroy');
+
+
+
+Route::put('/users/{id}', 'UserController@update');

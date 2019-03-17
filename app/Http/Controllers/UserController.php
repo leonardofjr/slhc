@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Role;
 class UserController extends Controller
 {
     /**
@@ -57,7 +58,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = User::findOrFail($id);
+        return view('backend.users.subpages.update_user_page')->withData($data);
     }
 
     /**
@@ -69,7 +71,22 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->fname = $request->fname;
+        $user->lname = $request->lname;
+        $user->email = $request->email;
+        $user->roles()->detach();
+        if ($request->role_admin) {
+            $user->roles()->attach(Role::where('name', 'Admin')->first());
+        }
+        if ($request->role_user) {
+            $user->roles()->attach(Role::where('name', 'User')->first());
+        }
+        if ($request->role_visitor) {
+            $user->roles()->attach(Role::where('name', 'Visitor')->first());
+        }
+        $user->save();
+        return redirect('/users');
     }
 
     /**

@@ -74,6 +74,13 @@ Route::get('/users', [
     'roles' => ['Admin']
 ]);
 
+Route::get('/users/{id}', [
+    'uses' => 'UserController@edit',
+    'as' => 'Edit User',
+    'middleware' => ['verified', 'roles'],
+    'roles' => ['Admin']
+]);
+
 Route::get('/services', 'BackendController@services')->name('Services')->middleware('verified');
 Route::get('/services/{id}', 'BackendController@show')->name('Edit Service')->middleware('verified');
 Route::get('/post_service', 'BackendController@services_post')->name('Post Service')->middleware('verified');
