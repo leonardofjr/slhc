@@ -60,7 +60,15 @@ Route::group(['middleware' => 'auth'], function () {
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'BackendController@index')->name('Settings')->middleware('verified');
+Route::get('/home', 'SettingsController@index')->name('Settings')->middleware('verified');
+
+Route::get('/users', [
+    'uses' => 'UserController@index',
+    'as' => 'Users',
+    'middleware' => ['verified', 'roles'],
+    'roles' => ['Admin']
+]);
+
 Route::get('/services', 'BackendController@services')->name('Services')->middleware('verified');
 Route::get('/services/{id}', 'BackendController@show')->name('Edit Service')->middleware('verified');
 Route::get('/post_service', 'BackendController@services_post')->name('Post Service')->middleware('verified');
