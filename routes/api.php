@@ -31,3 +31,4 @@ Route::delete('/reviews/{id}', 'ReviewsController@destroy');
 
 
 Route::put('/users/{id}', 'UserController@update');
+Route::delete('/users/{id}', 'UserController@destroy');

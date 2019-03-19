@@ -25,8 +25,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
-    }
+        $data = new User();
+        return view('backend.users.subpages.create_user_page');    }
 
     /**
      * Store a newly created resource in storage.
@@ -101,6 +101,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect('/users');
     }
 }

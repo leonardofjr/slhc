@@ -81,7 +81,7 @@ Route::get('/users/{id}', [
     'roles' => ['Admin']
 ]);
 
-Route::get('/add_user', 'BackendController@services_post')->name('Add User')->middleware('verified');
+Route::get('/create_user', 'UserController@create')->name('Add User')->middleware('verified');
 
 Route::get('/services', 'BackendController@services')->name('Services')->middleware('verified');
 Route::get('/services/{id}', 'BackendController@show')->name('Edit Service')->middleware('verified');
