@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Setting;
+use App\HoursOfOperation;
+use App\User;
+use Auth;
 class SettingsController extends Controller
 {
     /**
@@ -13,9 +16,11 @@ class SettingsController extends Controller
      */
     public function index()
     {
-        $data = Setting::firstOrFail();
-        $hours_of_operation = $data->hours_of_operation;
-        return view('backend.settings.settings_page')->withData($data)->withHoursOfOperation( $hours_of_operation);
+        $user = User::findOrFail(Auth::user()->id);
+        $setting = $user->settings->first();
+        $hoursOfOperation = $user->hoursOfOperations;
+        
+        return view('backend.settings.settings_page')->withData($setting)->withHoursOfOperation($hoursOfOperation);
 
     }
 
@@ -69,9 +74,21 @@ class SettingsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        
+        $setting = Setting::firstOrFail();
+        $hours_of_operation = HoursOfOperation::all();
+        forEach( $hours_of_operation as $key => $item) {
+            $item->start = $request->start[$key];
+            $item->end = $request->end[$key];
+            $item->save();
+        }
+        $setting->business_name = $request->business_name;
+        $setting->business_phone = $request->business_phone;
+        $setting->business_email = $request->business_email;
+        $setting->save();
+        return redirect('/settings');
+
     }
 
     /**

@@ -2,25 +2,25 @@
 
 @section('content')
 <h2>{{\Request::route()->getName()}}</h2>
-<form action="/api/settings/{{$data->id}}" method="POST">    
+<form action="/api/settings" method="POST">    
         <input type="hidden" name="_method" value="put" />
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label" for="fname">Business Name</label>
+            <label class="col-sm-2 col-form-label" for="business_name">Business Name</label>
             <div class="col-sm-10">
-            <input type="text" value="{{$data->business_name}}" class="form-control" id="fname" name="fname" placeholder="John">
+            <input type="text" value="{{$data->business_name}}" class="form-control" id="business_name" name="business_name" placeholder="John">
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label" for="lname">Business Phone</label>
+            <label class="col-sm-2 col-form-label" for="business_phone">Business Phone</label>
             <div class="col-sm-10">
-                <input type="text"  value="{{$data->business_phone}}"  class="form-control" id="lname" name="lname" placeholder="Doe">
+                <input type="text"  value="{{$data->business_phone}}"  class="form-control" id="business_phone" name="business_phone" placeholder="Doe">
             </div>
         </div>
       
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label" for="lname">Business Email</label>
+            <label class="col-sm-2 col-form-label" for="business_email">Business Email</label>
             <div class="col-sm-10">
-                <input type="text"  value="{{$data->business_email}}"  class="form-control" id="lname" name="lname" placeholder="Doe">
+                <input type="text"  value="{{$data->business_email}}"  class="form-control" id="business_email" name="business_email" placeholder="Doe">
             </div>
         </div>
         <div class="my-4">
@@ -30,25 +30,13 @@
             <th>Day</th>
             <th>Open</th>
             <th>Close</th>
-            <th>Opened</th>
         </tr>
-        @foreach ($hoursOfOperation as $item )
-        <tr>
-            <th>
-                <?php echo jddayofweek($item->day, 1) ?>
-            </th>
-            <td>
-                <input value="{{$item->start}}" type="time">
-            </td>
-            <td>
-                <input value="{{$item->end}}" type="time">
-            </td>
-            @if($item->opened)
-                 <td><input type="checkbox" value="{{$item->opened}}" checked></td>
-            @else
-                 <td><input type="checkbox" value="{{$item->opened}}"></td>
-            @endif
-        </tr>
+        @foreach($hoursOfOperation as $item)
+            <tr>
+                <td>{{jddayofweek($item->day, 1)}}</td>
+                <td><input type="time" value="{{$item->start}}" name="start[]"></td>
+                <td><input type="time" value="{{$item->end}}" name="end[]"></td>
+            </tr>
         @endforeach
         </table>
         </div>

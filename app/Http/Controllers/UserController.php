@@ -76,8 +76,12 @@ class UserController extends Controller
         $user->lname = $request->lname;
         $user->email = $request->email;
         $user->roles()->detach();
+        $user->settings()->detach();
+        $user->hoursOfOperations()->detach();
         if ($request->role_admin) {
             $user->roles()->attach(Role::where('name', 'Admin')->first());
+            $user->settings()->attach(Role::where('name', 'Admin')->first());
+            $user->hoursOfOperations()->sync([1, 2, 3, 4, 5, 6, 7]);
         }
         if ($request->role_user) {
             $user->roles()->attach(Role::where('name', 'User')->first());

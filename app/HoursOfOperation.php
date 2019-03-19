@@ -8,7 +8,8 @@ class HoursOfOperation extends Model
 { 
     public $timestamps = false;
 
-    function setting() {
-        return $this->belongsTo('App\Setting', "id");
+    public function users()
+    {
+        return $this->belongsToMany('App\User', 'user_hours_of_operation');
     }
 }

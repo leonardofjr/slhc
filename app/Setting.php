@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model
 {
-    function hours_of_operation() {
-        return $this->hasMany('App\HoursOfOperation', "settings_id");
+    public $timestamps = false;
+
+    function users() {
+        return $this->belongsToMany('App\User', 'user_setting');
     }
 }

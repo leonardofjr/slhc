@@ -64,7 +64,7 @@ Route::get('/settings', [
     'uses' => 'SettingsController@index',
     'as' => 'Settings',
     'middleware' => ['verified', 'roles'],
-    'roles' => ['Admin']
+    'roles' => ['Admin', 'User']
 ]);
 
 Route::get('/users', [
@@ -81,9 +81,14 @@ Route::get('/users/{id}', [
     'roles' => ['Admin']
 ]);
 
+Route::get('/add_user', 'BackendController@services_post')->name('Add User')->middleware('verified');
+
 Route::get('/services', 'BackendController@services')->name('Services')->middleware('verified');
 Route::get('/services/{id}', 'BackendController@show')->name('Edit Service')->middleware('verified');
 Route::get('/post_service', 'BackendController@services_post')->name('Post Service')->middleware('verified');
+
+
+
 
 
 Route::get('/reviews', 'ReviewsController@index')->name('Reviews')->middleware('verified');

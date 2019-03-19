@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHoursOfOperationsTable extends Migration
+class CreateUserSettingTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateHoursOfOperationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('hours_of_operations', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('settings_id');
-            $table->integer('day');
-            $table->time('start');
-            $table->time('end');
+        Schema::create('user_setting', function (Blueprint $table) {
+            $table->timestamps();
+            $table->integer('setting_id');
+            $table->integer('user_id');
         });
     }
 
@@ -29,6 +27,6 @@ class CreateHoursOfOperationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hours_of_operations');
+        Schema::dropIfExists('user_setting');
     }
 }

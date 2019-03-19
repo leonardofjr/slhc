@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-        <h2>{{\Request::route()->getName()}}</h2><a class="btn btn-primary" href="{{route("Post Service")}}">Add Service</a>
+        <h2>{{\Request::route()->getName()}}</h2><a class="btn btn-primary" href="{{route("Add User")}}">Add User</a>
 
         <table class="table">
         <thead>
