@@ -3,9 +3,8 @@
 @section('content')
 
     <h2>{{\Request::route()->getName()}}</h2>
-    <form action="/api/users" method="POST">
-        <input type="hidden" name="_method" value="put" />
-
+    <form action="/user" method="POST">
+        {{ csrf_field() }}
         <div class="form-group row">
          <label for="fname" class="col-sm-2 col-form-label text-md-right">{{ __('First Name') }}</label> 
             <div class="col-sm-10">

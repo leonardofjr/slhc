@@ -28,14 +28,11 @@ class BackendController extends Controller
     }
     public function services()
     {
-        $service = new ServicesController;
-        $data = $service->index();
-        return view('backend.services.services_page')->withData($data);
+  
     }
 
     public function show($id) {
-        $data = Service::findOrFail($id);
-        return view('backend.services.subpages.show_service')->withData($data);
+    
     }
 
 }

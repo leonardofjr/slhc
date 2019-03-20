@@ -57,44 +57,60 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
+/** Backend **/
 
-Auth::routes(['verify' => true]);
-Route:: get('/home', 'BackendController@index')->name('Welcome');
-Route::get('/settings', [
-    'uses' => 'SettingsController@index',
-    'as' => 'Settings',
-    'middleware' => ['verified', 'roles'],
-    'roles' => ['Admin', 'User']
-]);
+    Auth::routes(['verify' => true]);
 
-Route::get('/users', [
-    'uses' => 'UserController@index',
-    'as' => 'Users',
-    'middleware' => ['verified', 'roles'],
-    'roles' => ['Admin']
-]);
-
-Route::get('/users/{id}', [
-    'uses' => 'UserController@edit',
-    'as' => 'Edit User',
-    'middleware' => ['verified', 'roles'],
-    'roles' => ['Admin']
-]);
-
-Route::get('/create_user', 'UserController@create')->name('Add User')->middleware('verified');
-
-Route::get('/services', 'BackendController@services')->name('Services')->middleware('verified');
-Route::post('/api/services', 'Backend\ServicesController@store');
-
-Route::get('/services/{id}', 'BackendController@show')->name('Edit Service')->middleware('verified');
-Route::get('/post_service', 'Backend\ServicesController@create')->name('Post Service')->middleware('verified');
+    /** Home **/
+    Route:: get('/home', 'BackendController@index')->name('Welcome');
 
 
+    /** Users **/
+    Route::get('/users', [
+        'uses' => 'Backend\UsersController@index',
+        'as' => 'Users',
+        'middleware' => ['verified', 'roles'],
+        'roles' => ['Admin']
+    ]);
+
+    Route::get('/users/{id}', [
+        'uses' => 'Backend\UsersController@edit',
+        'as' => 'Edit User',
+        'middleware' => ['verified', 'roles'],
+        'roles' => ['Admin']
+    ]);
+
+
+    Route::post('/user', 'Backend\UsersController@store');
+    Route::put('/users/{id}', 'Backend\UsersController@update');
+    Route::delete('/users/{id}', 'Backend\UsersController@destroy');
+    Route::get('/create_user', 'Backend\UsersController@create')->name('Add User')->middleware('verified');
+
+    /** Settings **/
+    Route::get('/settings', [
+        'uses' => 'SettingsController@index',
+        'as' => 'Settings',
+        'middleware' => ['verified', 'roles'],
+        'roles' => ['Admin', 'User']
+    ]);
+
+    Route::put('/settings', 'SettingsController@update');
+
+
+    /** Services **/
+    Route::get('/services', 'Backend\ServicesController@index')->name('Services')->middleware('verified');
+    Route::get('/services/{id}', 'Backend\ServicesController@edit')->name('Edit Service')->middleware('verified');
+    Route::get('/post_service', 'Backend\ServicesController@create')->name('Post Service')->middleware('verified');
+    Route::post('/services', 'Backend\ServicesController@store');
+    Route::put('/services/{id}', 'Backend\ServicesController@update');
+    Route::delete('/services/{id}', 'Backend\ServicesController@destroy')->name('Delete');
 
 
 
-Route::get('/reviews', 'ReviewsController@index')->name('Reviews')->middleware('verified');
-Route::get('/reviews/{id}', 'ReviewsController@edit')->name('Edit Review')->middleware('verified');
-Route::get('/post_review', 'ReviewsController@create')->name('Post Review')->middleware('verified');
+    /** Reviews **/
 
+    Route::get('/reviews', 'Backend\ReviewsController@index')->name('Reviews')->middleware('verified');
+    Route::get('/reviews/{id}', 'Backend\ReviewsController@edit')->name('Edit Review')->middleware('verified');
+    Route::get('/post_review', 'Backend\ReviewsController@create')->name('Post Review')->middleware('verified');
+    Route::post('/api/reviews', 'Backend\ReviewsController@store');
 

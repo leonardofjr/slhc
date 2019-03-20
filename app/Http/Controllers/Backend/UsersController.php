@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\User;
 use App\Role;
-class UserController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,7 @@ class UserController extends Controller
     public function index()
     {   
         $users = User::all();
-        return view('backend.users.users_page')->withUsers($users);
+        return view('backend.users.index')->withUsers($users);
     }
 
     /**
@@ -26,7 +27,7 @@ class UserController extends Controller
     public function create()
     {
         $data = new User();
-        return view('backend.users.subpages.create_user_page');    }
+        return view('backend.users.subpages.create');    }
 
     /**
      * Store a newly created resource in storage.
@@ -59,7 +60,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $data = User::findOrFail($id);
-        return view('backend.users.subpages.update_user_page')->withData($data);
+        return view('backend.users.subpages.edit')->withData($data);
     }
 
     /**

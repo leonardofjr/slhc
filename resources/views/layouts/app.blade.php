@@ -19,10 +19,11 @@
 <link  href="/css/croppie.css" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
+    <script src="//cdn.ckeditor.com/4.11.3/standard/ckeditor.js"></script>
+
 </head>
 <body>
-    <div id="app">
+    <div id="">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -123,7 +124,6 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
-
 <script src="/js/croppie.js"></script>
 <script src="/js/functions.js"></script>
 

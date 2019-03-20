@@ -24,7 +24,8 @@
                 <td>${{$item->service_price}}</td>
                 <td><a href="/services/{{$item->id}}"><i class="fas fa-edit"></i></a></td>
                 <td>
-                <form action="api/services/{{$item->id}}" method="post">
+                <form action="/services/{{$item->id}}" method="post">
+                                {{ csrf_field() }}
                                 <input type="hidden" name="_method" value="delete" />
                                 <button type="submit" class="far fa-trash-alt"></button>
                         </form>

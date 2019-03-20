@@ -16,18 +16,13 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::put('/services/{id}', 'Backend\ServicesController@edit');
-Route::delete('/services/{id}', 'Backend\ServicesController@destroy')->name('Delete');
 
-Route::put( '/reviews/{id}', 'ReviewsController@update');
-Route::post('/reviews', 'ReviewsController@store');
-Route::delete('/reviews/{id}', 'ReviewsController@destroy');
-
-Route::put('/settings', 'SettingsController@update');
-Route::post('/reviews', 'ReviewsController@store');
-Route::delete('/reviews/{id}', 'ReviewsController@destroy');
+Route::put( '/reviews/{id}', 'Backend\ReviewsController@update');
+Route::delete('/reviews/{id}', 'Backend\ReviewsController@destroy');
+Route::post('/reviews', 'Backend\ReviewsController@store');
+Route::delete('/reviews/{id}', 'Backend\ReviewsController@destroy');
 
 
 
-Route::put('/users/{id}', 'UserController@update');
-Route::delete('/users/{id}', 'UserController@destroy');
+
+

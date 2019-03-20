@@ -20,7 +20,7 @@ class SettingsController extends Controller
         $setting = $user->settings->first();
         $hoursOfOperation = $user->hoursOfOperations;
         
-        return view('backend.settings.settings_page')->withData($setting)->withHoursOfOperation($hoursOfOperation);
+        return view('backend.settings.index')->withData($setting)->withHoursOfOperation($hoursOfOperation);
 
     }
 
@@ -76,6 +76,14 @@ class SettingsController extends Controller
      */
     public function update(Request $request)
     {
+
+        // Validating Request
+        $validatedData = $request->validate([
+            'business_name' => 'required',
+            'business_phone' =>'required',
+            'business_email' =>'required',
+        ]);
+
         $setting = Setting::firstOrFail();
         $hours_of_operation = HoursOfOperation::all();
         forEach( $hours_of_operation as $key => $item) {

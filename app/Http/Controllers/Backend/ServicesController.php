@@ -15,8 +15,8 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $service = Service::all();
-        return $service;
+        $data = Service::all();
+        return view('backend.services.index')->withData($data);
     }
 
     /**
@@ -27,7 +27,7 @@ class ServicesController extends Controller
     public function create(Request $request)
     {
 
-        return view('backend.services.subpages.post_service');
+        return view('backend.services.subpages.create');
 
 
     }
@@ -40,7 +40,7 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-                // Validating Request
+        // Validating Request
         $validatedData = $request->validate([
             'service_name' => 'required',
             'slug' =>'required',
@@ -80,15 +80,8 @@ class ServicesController extends Controller
      */
     public function edit($id, Request $request)
     {
-        $service = Service::findOrFail($id);
-        $service->service_name =  $request->service_name;
-        $service->slug =  $request->slug;
-        $service->duration =  $request->service_duration;
-        $service->service_price =  $request->service_price;
-        $service->short_description =  $request->short_description;
-        $service->detailed_description =  $request->detailed_description;
-        $service->save();
-        return redirect('/services');
+        $data = Service::findOrFail($id);
+        return view('backend.services.subpages.edit')->withData($data);
     }
 
     /**
@@ -100,7 +93,25 @@ class ServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Validating Request
+        $validatedData = $request->validate([
+            'service_name' => 'required',
+            'slug' =>'requ  ired',
+            'service_duration' =>'requ  ired',
+            'service_price' =>'requ  ired',
+            'short_description' =>'requ  ired',
+            'detailed_description' =>'requ  ired',
+        ]);
+
+        $service = Service::findOrFail($id);
+        $service->service_name =  $request->service_name;
+        $service->slug =  $request->slug;
+        $service->duration =  $request->service_duration;
+        $service->service_price =  $request->service_price;
+        $service->short_description =  $request->short_description;
+        $service->detailed_description =  $request->detailed_description;
+        $service->save();
+        return redirect('/services');
     }
 
     /**

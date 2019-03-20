@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Review;
 class ReviewsController extends Controller
 {
@@ -14,7 +15,7 @@ class ReviewsController extends Controller
     public function index()
     {
         $data = Review::all();
-        return view('backend.reviews.reviews_page')->withData($data);    }
+        return view('backend.reviews.index')->withData($data);    }
 
     /**
      * Show the form for creating a new resource.
@@ -23,7 +24,7 @@ class ReviewsController extends Controller
      */
     public function create()
     {
-        return view('backend.reviews.subpages.create_review_page');
+        return view('backend.reviews.subpages.create');
     }
 
     /**
@@ -34,6 +35,13 @@ class ReviewsController extends Controller
      */
     public function store(Request $request)
     {
+        // Validating Request
+        $validatedData = $request->validate([
+            'fname' => 'required',
+            'lname' =>'required',
+            'review' =>'required',
+        ]);
+
         $review = new Review;
         $review->fname = $request->fname;
         $review->lname = $request->lname;
@@ -68,7 +76,7 @@ class ReviewsController extends Controller
     public function edit($id)
     {
         $data = Review::findOrFail($id);
-        return view('backend.reviews.subpages.update_review_page')->withData($data);
+        return view('backend.reviews.subpages.edit')->withData($data);
     }
 
     /**

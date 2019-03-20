@@ -19,11 +19,8 @@
         <tr>
                 <td>{{$item->fname}}</td>
                 <td>{{$item->lname}}</td>
-                @if ($item->verified)
-                        <td>Yes</td>
-                @else
-                        <td>No</td>              
-                @endif
+                <td>{!!$item->verified ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times"></i>'!!}</td>
+ 
                 <td><a href="/reviews/{{$item->id}}"><i class="fas fa-edit"></i></a></td>
                 <td>
                 <form action="api/reviews/{{$item->id}}" method="post">
