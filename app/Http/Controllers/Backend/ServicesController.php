@@ -26,15 +26,10 @@ class ServicesController extends Controller
      */
     public function create(Request $request)
     {
-       $service = new Service();
-       $service->service_name =  $request->service_name;
-       $service->slug =  $request->slug;
-       $service->duration =  $request->service_duration;
-       $service->service_price =  $request->service_price;
-       $service->short_description =  $request->short_description;
-       $service->detailed_description =  $request->detailed_description;
-       $service->save();
-       return redirect('/services');
+
+        return view('backend.services.subpages.post_service');
+
+
     }
 
     /**
@@ -45,8 +40,26 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+                // Validating Request
+        $validatedData = $request->validate([
+            'service_name' => 'required',
+            'slug' =>'required',
+            'service_duration' =>'required',
+            'service_price' =>'required',
+            'short_description' =>'required',
+            'detailed_description' =>'required',
+        ]);
+
+        $service = new Service();
+        $service->service_name =  $request->service_name;
+        $service->slug =  $request->slug;
+        $service->duration =  $request->service_duration;
+        $service->service_price =  $request->service_price;
+        $service->short_description =  $request->short_description;
+        $service->detailed_description =  $request->detailed_description;
+
+        $service->save();
+        return redirect('/services');    }
 
     /**
      * Display the specified resource.

@@ -37,8 +37,5 @@ class BackendController extends Controller
         $data = Service::findOrFail($id);
         return view('backend.services.subpages.show_service')->withData($data);
     }
-    public function services_post()
-    {
-        return view('backend.services.subpages.post_service');
-    }
+
 }

@@ -16,7 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('/services', 'Backend\ServicesController@create');
 Route::put('/services/{id}', 'Backend\ServicesController@edit');
 Route::delete('/services/{id}', 'Backend\ServicesController@destroy')->name('Delete');
 
