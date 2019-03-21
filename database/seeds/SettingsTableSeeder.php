@@ -13,9 +13,15 @@ class SettingsTableSeeder extends Seeder
     public function run()
     {
         DB::table('settings')->insert([
-            'business_name' => 'Sacred Light Healing Centre',
-            'business_phone' => '416-907-4697',
-            'business_email' => 'info@sacredlighthealing.ca',
+            'company_name' => 'Sacred Light Healing Centre',
+            'phone' => '416-907-4697',
+            'email' => 'info@sacredlighthealing.ca',
+            'street_address' => '188 Bur Oak Avenue',
+            'city' => 'Markham',
+            'province' => 'Ontario',
+            'postal_code' => 'L6C-2M1',
+            'facebook' => 'https://www.facebook.com/sacredlighthealing/',
+            'instagram' => 'https://www.instagram.com/Sacredlighthealingcentre/',
         ]);
     }
 }

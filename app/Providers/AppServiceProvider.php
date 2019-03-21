@@ -28,13 +28,13 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         $setting = Setting::first();
         $hours_of_operation = HoursOfOperation::all();
-        view()->share('company_name', $setting->business_name);
-        view()->share('company_address', '188 Bur Oak Avenue');
-        view()->share('company_city', 'Markham');
-        view()->share('company_territory', 'Ontario');
-        view()->share('company_postal_code', 'L6C-2M1');
-        view()->share('company_phone', $setting->business_phone);
-        view()->share('company_email', $setting->business_email);
+        view()->share('company_name', $setting->company_name);
+        view()->share('company_address',$setting->street_address);
+        view()->share('company_city',$setting->city);
+        view()->share('company_territory',$setting->province);
+        view()->share('company_postal_code',$setting->postal_code);
+        view()->share('company_phone', $setting->phone);
+        view()->share('company_email', $setting->email);
         view()->share('hours_of_operation', $hours_of_operation);
     }
 }

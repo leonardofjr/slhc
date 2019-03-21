@@ -79,9 +79,9 @@ class SettingsController extends Controller
 
         // Validating Request
         $validatedData = $request->validate([
-            'business_name' => 'required',
-            'business_phone' =>'required',
-            'business_email' =>'required',
+            'company_name' => 'required',
+            'phone' =>'required',
+            'email' =>'required',
         ]);
 
         $setting = Setting::firstOrFail();
@@ -91,9 +91,15 @@ class SettingsController extends Controller
             $item->end = $request->end[$key];
             $item->save();
         }
-        $setting->business_name = $request->business_name;
-        $setting->business_phone = $request->business_phone;
-        $setting->business_email = $request->business_email;
+        $setting->company_name = $request->company_name;
+        $setting->address = $request->address;
+        $setting->city = $request->city;
+        $setting->province = $request->province;
+        $setting->postal_code = $request->postal_code;
+        $setting->phone = $request->phone;
+        $setting->email = $request->email;
+        $setting->facebook = $request->facebook;
+        $setting->instagram = $request->instagram;
         $setting->save();
         return redirect('/settings');
 
