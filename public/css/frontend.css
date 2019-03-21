@@ -186,23 +186,23 @@ header .main-heading span {
   background-color: #f16522;
 }
 
-.lf-primary-button {
+.btn-primary {
   background: #f16522;
   border: 2px solid #fff;
   font: inherit;
   line-height: 1;
   margin: 0.5em;
   padding: 1em 2em;
-  color: white;
-  cursor: pointer;
+  color: white !important;
+  cursor: pointer !important;
 }
 
-.lf-secondary-button {
-  background-color: #FFBF2D;
-  color: white;
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
+.btn-secondary {
+  background-color: #FFBF2D !important;
+  color: white !important;
+  padding: 5px 10px !important;
+  border: none !important;
+  cursor: pointer !important;
 }
 
 .jumbotron {
@@ -769,7 +769,7 @@ body {
 }
 
 footer {
-  background: #f16522;
+  background: #000;
   color: #fff;
 }
 

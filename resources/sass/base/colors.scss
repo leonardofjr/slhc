@@ -11,15 +11,16 @@
     background-color: $primary-color;
 }
 
-.lf-primary-button {
+.btn-primary {
     @include btn-border-line($primary-color, #fff);
-    color: white;
-    cursor: pointer;
-}
-.lf-secondary-button {
-    background-color: #FFBF2D;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
+    color: white!important;
+    cursor: pointer!important;
+} 
+
+.btn-secondary {
+    background-color: #FFBF2D!important;
+    color: white!important;
+    padding: 5px 10px!important;
+    border: none!important;
+    cursor: pointer!important;
 }

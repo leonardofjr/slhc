@@ -18,7 +18,7 @@
                             <h2>Our practice revolves around the ancient healing arts of traditional healing</h2>
                             <p>For thousands of years our ancestors worked with various types of healing modalities in order to achieve balance whether it’s was through balancing chakras or Qi ‘ a universal energy that circulates through our body and the universe, which Is still commonly practiced among many cultures today. According to ancient theories of Chinese medicine the flow of qi must always flow freely to maintain a healthy life harmoniously to help achieve longevity. Therefore it is important to take the time to help yourself maintain a balanced lifestyle. </p><p><strong>Call us today we’ve love to help!</strong></p>
                             <div class="btn-container text-right">
-                                <a href="/who-are-we"><button class="lf-primary-button">READ MORE</button></a>
+                                <a href="/who-are-we"><button class="btn btn-primary">READ MORE</button></a>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                             <h2>A Healthy Qi body brings 
 optimal health and gives you more energy</h2>
                             <p>Live More, Do More, Feel Good
-Stay in control of your health!<br><a href="/book-now"><button class="lf-secondary-button mt-3">Book Now</button></a></p>
+Stay in control of your health!<br><a href="/book-now"><button class="btn btn-secondary mt-3">Book Now</button></a></p>
                              
                         </div>
                  
@@ -75,7 +75,8 @@ Stay in control of your health!<br><a href="/book-now"><button class="lf-seconda
                             <div class="inner-text">
                                 <h2>Testimonials</h2>
                                 <p>“Once the session was over I felt such a difference, I felt lighter and calm where as before the session all I felt was heaviness and tension”</p>
-                                <p>Alonzo R.<br><a href="/testimonials">read more</a></p>
+                                <p>Alonzo R.</p>
+                                <a href="/testimonials"><button class="btn btn-primary">MORE REVIEWS</button></a>
                             </div>
                   
                 </div>

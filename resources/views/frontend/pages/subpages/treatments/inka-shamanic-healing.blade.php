@@ -38,7 +38,7 @@
 
     <p>Price</br>$120.00/90mins</p>
 
-    <a href="/book-now"><button class="lf-primary-button">Book Now</button></a>
+    <a href="/book-now"><button class="btn btn-primary">Book Now</button></a>
 
 </div>
 -->

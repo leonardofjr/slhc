@@ -74,7 +74,7 @@
 
 <div class="text-right">
 <p >Price<br>$100.00</p>
-    <a href="/book-now"><button class="lf-primary-button">Book Now</button></a>
+    <a href="/book-now"><button class="btn btn-primary">Book Now</button></a>
 
 </div>
 
