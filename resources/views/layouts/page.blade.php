@@ -3,6 +3,9 @@
 <html>
 
     <head>
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 
         <title>@yield('title')</title>
 
@@ -15,47 +18,22 @@
         <header>
 
                 @include('frontend.components.navigation')
+                @include('frontend.components.jumbotron')
 
 
         </header>
 
-        <section class="container main-wrapper">
-
-            <div class="row">
-
-          
-                    @if (\Request::is('courses', 'courses/*'))
-
-                <aside class="d-none d-md-block col-md-3  services-menu">
-
-                   <h2>Menu</h2>
-
-                   <ul>
-
-
-                         @include('frontend.menus.courses-menu')
-
-
-
-             
-                    </ul>
-
-                </aside>
-                    @endif
-
-                <main class="col-12">
-
-                    <div class="content">
-
-                        @yield('content')
-
-                    </div>
-
-                </main>
-
+        <main class="container main-wrapper">
+            <div id="app" class="row">
+                <div class="col-sm-3">
+                    <app></app>
+                </div>
+                <div class="col-sm-9">
+                     <router-view></router-view>
+                </div>
             </div>
-
-         </section>
+         
+        </main>
 
         <footer>
 

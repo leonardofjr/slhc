@@ -21,26 +21,12 @@ Route::get('/', ['as' => 'Home', 'uses' => 'PagesController@getHomepage']);
 Route::get('/who-are-we',  ['as' => 'Who Are We', 'uses' => 'PagesController@getWhoAreWePage']);
 // ** Treatments ** //
 Route::get('/treatments',  ['as' => 'Treatments', 'uses' => 'PagesController@getTreatmentsPage']);
-Route::get('/treatments/{slug}',  ['as' => 'Treatments', 'uses' => 'PagesController@getTreatmentPage']);
-// ** Subpages  ** //
-Route::get('/treatments/traditional-chinese-medicine', ['as' => 'Traditional Chinese Medicine', 'uses' => 'TreatmentPagesController@getTraditionalChineseMedicinePage']);
-Route::get('/treatments/sacred-crystal-healing', ['as' => 'Sacred Crystal Healing', 'uses' => 'TreatmentPagesController@getSacredCrystalHealing']);
-Route::get('/treatments/massage', ['as' => 'Massage', 'uses' => 'TreatmentPagesController@getMassagePage']);
-Route::get('/treatments/reiki', ['as' => 'Reiki', 'uses' => 'TreatmentPagesController@getReikiPage']);
-Route::get('/treatments/inka-shamanic-healing', ['as' => 'Inka Shamanic Healing', 'uses' => 'TreatmentPagesController@getInkaShamanicHealingPage']);
-
-// ** Courses ** //
-Route::get('/courses',  ['as' => 'Courses', 'uses' => 'PagesController@getCoursesPage']);
-// ** Subpages  ** //
-Route::get('/courses/acupressure-workshop', ['as' => 'Acupressure Workshop', 'uses' => 'CoursesPagesController@getAcupressureWorkshopPage']);
-Route::get('/courses/herbal-medicine-workshop', ['as' => 'Herbal Medicine Workshop', 'uses' => 'CoursesPagesController@getHerbalMedicineWorkshop']);
-Route::get('/courses/spiritual-awakening-workshop', ['as' => 'Spiritual Awakening Workshop', 'uses' => 'CoursesPagesController@getSpiritualAwakeningWorkshopPage']);
 
 // ** Testimonials ** //
 Route::get('/testimonials',  ['as' => 'Testimonials', 'uses' => 'PagesController@getTestimonialsPage']);
 
 // ** Contact ** //
-Route::get('/contact',  ['as' => 'Contact us', 'uses' => 'PagesController@getContactPage']);
+Route::get('/contact',  ['as' => 'Contact', 'uses' => 'PagesController@getContactPage']);
 
 // ** Book Now ** //
 Route::get('/book-now',  ['as' => 'Book Now', 'uses' => 'PagesController@getBookNowPage']);
@@ -112,5 +98,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/reviews', 'Backend\ReviewsController@index')->name('Reviews')->middleware('verified');
     Route::get('/reviews/{id}', 'Backend\ReviewsController@edit')->name('Edit Review')->middleware('verified');
     Route::get('/post_review', 'Backend\ReviewsController@create')->name('Post Review')->middleware('verified');
-    Route::post('/api/reviews', 'Backend\ReviewsController@store');
+
+    Route::post('/reviews', 'Backend\ReviewsController@store');
+    Route::put('/reviews/{id}', 'Backend\ReviewsController@update');
+    Route::delete('/reviews/{id}', 'Backend\ReviewsController@destroy');
 

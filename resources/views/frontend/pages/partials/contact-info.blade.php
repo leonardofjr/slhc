@@ -6,6 +6,4 @@
 
     <li><span><strong>Email:</strong></span>@include('frontend.pages.partials.email-link')</li>
 
-<li><span><strong>We are open: by appointments</strong> </span>{{$hours_of_operation}}</li>
-
 </ul>

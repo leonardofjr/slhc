@@ -769,8 +769,16 @@ body {
 }
 
 footer {
-  background: #eee;
-  color: #f16522;
+  background: #f16522;
+  color: #fff;
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+footer a:hover {
+  color: white;
 }
 
 footer ul {

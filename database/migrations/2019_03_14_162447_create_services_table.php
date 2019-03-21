@@ -21,7 +21,6 @@ class CreateServicesTable extends Migration
             $table->string('duration');
             $table->text('short_description');
             $table->text('detailed_description');
-            $table->timestamps();
         });
     }
 

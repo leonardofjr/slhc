@@ -9,7 +9,7 @@
     use DB;
     use Storage;  
     use Route;  
-    
+    use App\Review;
     class PagesController extends Controller {
         public function getHomepage() {
        
@@ -23,9 +23,8 @@
          } // getWhoAreWePage() Ends Here
 
          public function getTreatmentsPage() {
-            $services = new ServicesController;
-            $data = $services->index();
-            return view('frontend.pages.treatments')->withData($data);
+            $services = Service::all();
+            return view('frontend.pages.treatments')->withServices( $services);
          }  // getTreatmentsPage() Ends Here
 
 
@@ -40,7 +39,8 @@
          }  // getCoursesPage() Ends  Here
 
          public function getTestimonialsPage() {
-            return view('frontend.pages.testimonials');
+            $reviews = Review::all();
+            return view('frontend.pages.testimonials')->withReviews($reviews);
          }  // getTestimonialsPage() Ends Here
 
          public function getFAQPage() {

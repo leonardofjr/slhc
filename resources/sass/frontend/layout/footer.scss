@@ -1,8 +1,14 @@
 footer {
-  background: #eee;
-  color: $primary-color;
+  background: $primary-color;
+  color: #fff;
+  a {
+    color: rgba(255, 255, 255, .8);
+  }
+  a:hover {
+    color: rgba(255, 255, 255, 1);
+  }
   ul {
-  list-style: none;
+    list-style: none;
     margin-left: 20px;
 }
 }

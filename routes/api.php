@@ -17,12 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::put( '/reviews/{id}', 'Backend\ReviewsController@update');
-Route::delete('/reviews/{id}', 'Backend\ReviewsController@destroy');
-Route::post('/reviews', 'Backend\ReviewsController@store');
-Route::delete('/reviews/{id}', 'Backend\ReviewsController@destroy');
 
-
-
-
-
+Route::get('/services', 'Api\ServicesController@getAll');
+Route::get('/service/{slug}', 'Api\ServicesController@getOne');
