@@ -54,7 +54,8 @@
 
 
          public function getBookNowPage() {
-            return view('frontend.pages.book-now');
+            $services = Service::all();
+            return view('frontend.pages.book-now')->withServices($services);         
          }  // getBookNowPage() Ends Here
 
 

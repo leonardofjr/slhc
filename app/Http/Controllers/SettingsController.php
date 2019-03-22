@@ -92,7 +92,7 @@ class SettingsController extends Controller
             $item->save();
         }
         $setting->company_name = $request->company_name;
-        $setting->address = $request->address;
+        $setting->street_address = $request->street_address;
         $setting->city = $request->city;
         $setting->province = $request->province;
         $setting->postal_code = $request->postal_code;

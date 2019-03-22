@@ -1,7 +1,6 @@
 <template>
         <div id="home" class=" row">
                 <div class="col-md-12">
-                    <h2>All Treatments</h2>
                     <div v-for="item in data" :key="item">
                         <h3><router-link :to="'/treatments/' + item.slug">{{item.service_name}}</router-link></h3>
                         <p>{{item.detailed_description}}</p>

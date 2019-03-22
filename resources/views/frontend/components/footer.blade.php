@@ -31,23 +31,6 @@
             <a href="{{$facebook}}">
                 <img src="{{asset('assets/png/facebook-profile-image.png')}}" class="img-fluid" alt="">
             </a>
-            <!--
-            <h3>SCHEDULE</h3>
-            <table class="table">
-                <tr>
-                    <th>Day</th>
-                    <th>Start</th>
-                    <th>End</th>
-                </tr>
-            @foreach ( $hours_of_operation as $item )
-            <tr>   
-                <td>{{jddayofweek($item->day, 1)}}</td>
-                <td>{{date("h:i A", strtotime($item->start))}}</td>
-                <td>{{date("h:i A", strtotime($item->end))}}</td>
-            </tr> 
-            @endforeach
-            </table>
-            -->
         </div>
     </div>
 </section>

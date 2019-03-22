@@ -17,8 +17,8 @@ class CreateHoursOfOperationsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('settings_id');
             $table->integer('day');
-            $table->time('start');
-            $table->time('end');
+            $table->time('start')->nullable();
+            $table->time('end')->nullable();
         });
     }
 

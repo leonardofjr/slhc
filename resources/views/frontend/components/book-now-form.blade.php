@@ -1,90 +1,79 @@
-<form method="POST" action="/book-now" class="mr-auto ml-auto py-4 book-now-form">
-  {{ csrf_field() }} 
-  <div class="form-group">
-    <label for="name">Name:</label>
-    <input class="form-control" type="text" name="name" placeholder="your name"/>
 
-    <div class="flash-message flash-message-name alert alert-info d-none">
-        <span></span>
-    </div>  
-  </div>
-            
+    <form action="/contact" method="POST">
+            {{ csrf_field() }}
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control  {{ $errors->has('name') ? ' is-invalid' : '' }}" id="name" name="name" placeholder="Name" value="{{ old('name') }}">
+                        @if ($errors->has('name'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('name') }}</strong>
+                            </span>
+                        @endif
+                </div>
 
-  <div class="form-group">
-    <label for="phone">Phone:</label>
-    <input class="form-control" type="tel" name="phone" placeholder="your phone number"/>
-    
-    <div class="flash-message flash-message-phone alert alert-info d-none">
-        <span></span>
-    </div>  
-  </div>
+            </div>
 
-  <div class="form-group">
-    <label for="email">Email address:</label>
-     <input class="form-control" type="email" name="email" placeholder="your email address"/>
-    
-    <div class="flash-message flash-message-email alert alert-info d-none">
-        <span></span>
-    </div>  
-  </div>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <input type="tel" class="form-control  {{ $errors->has('phone') ? ' is-invalid' : '' }}" id="phone" name="phone" placeholder="Phone"  value="{{ old('phone') }}">
+                        @if ($errors->has('phone'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('phone') }}</strong>
+                            </span>
+                        @endif
+                </div>
 
-  <div class="form-group">
-    <label>Treatment of interest?:</label>
+            </div>
+            <div class="form-group row">
 
-    <div class="checkbox">
-     <label><input type="checkbox" name="interests[]" value="Traditional Chinese Medicine">Traditional Chinese Medicine</label>
-    </div>
+                <div class="col-sm-12">
+                    <input type="email" class="form-control  {{ $errors->has('email') ? ' is-invalid' : '' }}" id="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                        @if ($errors->has('email'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
+                </div>
+            </div>
 
-    <div class="checkbox">
-      <label><input type="checkbox" name="interests[]" value="Sacred Crystal Healing">Sacred Crystal Healing</label>
-    </div>
+        <div class="form-group ">
+            @foreach ( $services as $service )
 
-    <div class="checkbox">
-      <label><input type="checkbox" name="interests[]" value="Massage">Massage</label>
-    </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="{{$service["service_name"]}}" name="interests[]">
+                <label class="form-check-label" for="{{$service["service_name"]}}">{{$service["service_name"]}}</label>
+            </div>
+            @endforeach
+        </div>
+        
+            <div class="form-group row">
 
-    <div class="checkbox">
-      <label><input type="checkbox" name="interests[]" value="Reiki">Reiki</label>
-    </div>
+                <div class="col-sm-12">
+                    <input type="date" class="form-control  {{ $errors->has('date') ? ' is-invalid' : '' }}" id="date" name="date" placeholder="Email" value="{{ old('date') }}">
+                        @if ($errors->has('date'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('date') }}</strong>
+                            </span>
+                        @endif
+                </div>
+            </div>
 
-    <div class="checkbox">
-      <label><input type="checkbox" name="interests[]" value="inca Shamanic Healing">Inca Shamanic Healing</label>
-    </div>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <textarea class="form-control {{ $errors->has('inquiry') ? ' is-invalid' : '' }}" id="inquiry" name="inquiry" aria-describedby="emailHelp" placeholder="Message">{{ old('inquiry') }}</textarea>
+                        @if ($errors->has('inquiry'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('inquiry') }}</strong>
+                            </span>
+                        @endif    
+                </div>
+            </div>
 
-    <div class="flash-message flash-message-interests alert alert-info d-none">
-        <span></span>
-    </div>  
-  </div>
-
-  
-  <div class="form-group">
-    <label for="date">Preferred Date:</label>
-     <input class="form-control" type="date" name="date"/>
-    
-    <div class="flash-message flash-message-date alert alert-info d-none">
-        <span></span>
-    </div>  
-  </div>
-
-
-
-  <div class="form-group">
-    <label for="inquiry">Inquiry:</label>
-    <textarea class="form-control" type="text" name="inquiry" placeholder="Leave Your Message"></textarea>
-    
-    <div class="flash-message flash-message-inquiry alert alert-info d-none">
-        <span></span>
-    </div>  
-  </div>
-    <div class="form-group">
-        <div class="g-recaptcha" data-sitekey="6LcFrGoUAAAAAE9nwReZ-oKM5nff7vL3AiLw_Uo1"></div>
-    </div>
-    <div class="flash-message-recaptcha-token alert alert-info d-none">
-        <span></span>
-    </div> 
-    <button class="btn btn-primary" type="submit">Send It Now</button>
-</form>
-
-<div class="flash-message flash-message-success alert alert-info d-none">
-    <span>Your inquiry has been submitted</span>
-</div> 
+        <div class="form-group">
+            <div class="g-recaptcha" data-sitekey="6LcFrGoUAAAAAE9nwReZ-oKM5nff7vL3AiLw_Uo1"></div>
+        </div>
+        <div class="flash-message-recaptcha-token alert alert-info d-none">
+            <span></span>
+        </div> 
+            <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
+        </form>

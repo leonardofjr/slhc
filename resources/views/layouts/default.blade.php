@@ -8,17 +8,15 @@
         <header>
                 @include('frontend.components.navigation')
                 @include('frontend.components.jumbotron')
-                <div id="secondary-menu">
-                    @include('frontend.menus.secondary-menu')
-                </div>
-                
-            
         </header>
         <main>
-            <div class="content">
+            @if (!\Request::is('/'))
+                <div class="page-title primary-bg-color">
+                    <h2 class="text-center m-0 p-0">{{\Request::route()->getName()}}</h2>
+               </div>
+            @endif
+
                  @yield('content')
-            </div>
-                   
         </main>
       
         <footer>

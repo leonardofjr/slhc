@@ -1,5 +1,29 @@
-@extends('layouts.contact')
-@section('title', 'Contact Us - Sacred Light Healing Centre')
-@section('content')
-    @include('frontend.components/contact-form')
+@extends('layouts.default')
+
+@section('title', 'Contact Us - Sacred Light Healing Centre')
+
+@section('content')
+    <div class="container">
+        <h4 class="text-center">Find out more information</h4>
+        <p class="text-center">If you would like to discuss our treatments, please contact us and we will be happy to provide with the information you need.</p>
+        <div>
+           <p>Phone: @include('frontend.pages.partials.phone-link')</p>
+           <p>Email: @include('frontend.pages.partials.email-link')</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <h4>Address</h4>
+                 <h6>{{$company_name}}</h6>
+                <a href="https://goo.gl/maps/zEyD95aCnfF2"> {{$company_address}}, {{$company_city}}, {{$company_territory}}</a>
+                @include('frontend.components.map')
+
+            </div>
+
+
+            <div class="col-sm-7">
+                <h4>Ask a question</h4>
+                @include('frontend.components/contact-form')
+            </div>
+        </div>
+    </div>
 @endsection

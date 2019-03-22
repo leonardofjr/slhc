@@ -23,16 +23,20 @@
 
         </header>
 
-        <main class="container main-wrapper">
-            <div id="app" class="row">
-                <div class="col-sm-3">
-                    <app></app>
-                </div>
-                <div class="col-sm-9">
-                     <router-view></router-view>
+        <main>
+            <div class="page-title primary-bg-color">
+                <h2 class="text-center m-0 p-0">{{\Request::route()->getName()}}</h2>
+            </div>
+            <div id="app" class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <app></app>
+                    </div>
+                    <div class="col-sm-9">
+                        <router-view></router-view>
+                    </div>
                 </div>
             </div>
-         
         </main>
 
         <footer>

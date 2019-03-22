@@ -199,6 +199,12 @@ header .main-heading span {
 
 .primary-bg-color {
   background-color: #f16522;
+  color: white;
+}
+
+.page-title {
+  text-transform: uppercase;
+  padding: 1em 0;
 }
 
 .btn-primary {
@@ -604,8 +610,9 @@ body {
 }
 
 #map {
-  height: 86vh;
+  width: 100%;
   background-color: grey;
+  height: 300px;
 }
 
 .main-navigation {
@@ -786,6 +793,10 @@ footer ul {
   margin-left: 20px;
 }
 
+footer svg {
+  max-width: 250px;
+}
+
 .site-info {
   background: #f16522;
   color: white;
@@ -909,5 +920,9 @@ footer ul {
   padding: 11px 15px;
   display: block;
   text-decoration: none;
+}
+
+.primary-bg-color {
+  background: #f16522;
 }
 

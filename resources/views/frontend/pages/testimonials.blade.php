@@ -5,7 +5,6 @@
 @section('content')
 
 <div class="container">
-
 <h5 class="text-center mb-5">Find out What Our Clients Say About Us</h5>
     <div class="row">
         @if($reviews)

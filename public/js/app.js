@@ -1823,7 +1823,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -36986,46 +36985,40 @@ var render = function() {
     _c(
       "div",
       { staticClass: "col-md-12" },
-      [
-        _c("h2", [_vm._v("All Treatments")]),
-        _vm._v(" "),
-        _vm._l(_vm.data, function(item) {
-          return _c("div", { key: item }, [
-            _c(
-              "h3",
-              [
-                _c(
-                  "router-link",
-                  { attrs: { to: "/treatments/" + item.slug } },
-                  [_vm._v(_vm._s(item.service_name))]
+      _vm._l(_vm.data, function(item) {
+        return _c("div", { key: item }, [
+          _c(
+            "h3",
+            [
+              _c("router-link", { attrs: { to: "/treatments/" + item.slug } }, [
+                _vm._v(_vm._s(item.service_name))
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(item.detailed_description))]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "d-flex flex-row justify-content-end mb-3" },
+            [
+              _c("strong", [
+                _vm._v(
+                  "$" +
+                    _vm._s(item.service_price.toFixed(2)) +
+                    "/" +
+                    _vm._s(item.duration) +
+                    "min"
                 )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(item.detailed_description))]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "d-flex flex-row justify-content-end mb-3" },
-              [
-                _c("strong", [
-                  _vm._v(
-                    "$" +
-                      _vm._s(item.service_price.toFixed(2)) +
-                      "/" +
-                      _vm._s(item.duration) +
-                      "min"
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _vm._m(0, true)
-          ])
-        })
-      ],
-      2
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _vm._m(0, true)
+        ])
+      }),
+      0
     )
   ])
 }

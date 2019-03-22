@@ -1,34 +1,43 @@
 
-<form method="POST" action="/contact" class="mr-auto ml-auto py-4 contact-form">
-    {{ csrf_field() }} 
-    <div class="form-group">
-        <input class="form-control" type="text" name="name" placeholder="Name"/>
-    </div>
-    <div class="flash-message-name alert alert-info d-none">
-         <span></span>
-    </div>  
-    <div class="form-group">
-        <input class="form-control" type="text" name="email" placeholder="Email Address"/>
-    </div>
-    <div class="flash-message-email alert alert-info d-none">
-        <span></span>
-    </div>  
-    <div class="form-group">
-        <textarea class="form-control" type="text" name="inquiry" placeholder="Leave Your Message"></textarea>
-    </div>
- 
-    <div class="flash-message-inquiry alert alert-info d-none">
-        <span></span>
-    </div> 
-    <div class="form-group">
-        <div class="g-recaptcha" data-sitekey="6LcFrGoUAAAAAE9nwReZ-oKM5nff7vL3AiLw_Uo1"></div>
-    </div>
-    <div class="flash-message-recaptcha-token alert alert-info d-none">
-        <span></span>
-    </div> 
-    <button class="btn btn-primary" type="submit">Send It Now</button>
-</form>
+   <form action="/contact" method="POST">
+        {{ csrf_field() }}
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <input type="text" class="form-control  {{ $errors->has('name') ? ' is-invalid' : '' }}" id="name" name="name" placeholder="Name" value="{{ old('name') }}">
+                    @if ($errors->has('name'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span>
+                     @endif
+            </div>
 
-<div class="flash-message-success alert alert-info d-none">
-    <span>Your inquiry has been submitted</span>
-</div> 
+            <div class="col-sm-6">
+                <input type="email" class="form-control  {{ $errors->has('email') ? ' is-invalid' : '' }}" id="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                    @if ($errors->has('email'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                     @endif
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-12">
+                <textarea class="form-control {{ $errors->has('inquiry') ? ' is-invalid' : '' }}" id="inquiry" name="inquiry" aria-describedby="emailHelp" placeholder="Message">{{ old('inquiry') }}</textarea>
+                    @if ($errors->has('inquiry'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('inquiry') }}</strong>
+                        </span>
+                     @endif    
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="g-recaptcha " data-size="compact" data-sitekey="6LcFrGoUAAAAAE9nwReZ-oKM5nff7vL3AiLw_Uo1"></div>
+        </div>
+        <div class="flash-message-recaptcha-token alert alert-info d-none">
+            <span></span>
+        </div> 
+        
+        <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
+    </form>
