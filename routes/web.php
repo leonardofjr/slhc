@@ -72,15 +72,17 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/users/{id}', 'Backend\UsersController@destroy');
     Route::get('/create_user', 'Backend\UsersController@create')->name('Add User')->middleware('verified');
 
-    /** Settings **/
-    Route::get('/settings', [
-        'uses' => 'SettingsController@index',
-        'as' => 'Settings',
-        'middleware' => ['verified', 'roles'],
-        'roles' => ['Admin', 'User']
-    ]);
 
-    Route::put('/settings', 'SettingsController@update');
+
+    /** Posts **/
+    Route::get('/posts', 'Backend\PostsController@index')->name('Posts')->middleware('verified');
+    Route::get('/posts/{id}', 'Backend\PostsController@edit')->name('Edit Post')->middleware('verified');
+    Route::get('/create_post', 'Backend\PostsController@create')->name('Create Post')->middleware('verified');
+    Route::post('/posts', 'Backend\PostsController@store');
+    Route::put('/posts/{id}', 'Backend\PostsController@update');
+    Route::delete('/posts/{id}', 'Backend\PostsController@destroy')->name('Delete');
+
+    
 
 
     /** Services **/
@@ -90,7 +92,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/services', 'Backend\ServicesController@store');
     Route::put('/services/{id}', 'Backend\ServicesController@update');
     Route::delete('/services/{id}', 'Backend\ServicesController@destroy')->name('Delete');
-
 
 
     /** Reviews **/
@@ -103,3 +104,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('/reviews/{id}', 'Backend\ReviewsController@update');
     Route::delete('/reviews/{id}', 'Backend\ReviewsController@destroy');
 
+
+    /** Settings **/
+    Route::get('/settings', [
+        'uses' => 'SettingsController@index',
+        'as' => 'Settings',
+        'middleware' => ['verified', 'roles'],
+        'roles' => ['Admin', 'User']
+    ]);
+
+    Route::put('/settings', 'SettingsController@update');

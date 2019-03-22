@@ -85,16 +85,19 @@
                         </li>
                         @if(Auth::user()->hasRole('Admin'))
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('Users') }}">Users</a>
+                            <a class="nav-link active" href="{{ route('Posts') }}">Posts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('Settings') }}">Settings</a>
+                            <a class="nav-link active" href="{{ route('Users') }}">Users</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ route('Services') }}">Services</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ route('Reviews') }}">Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ route('Settings') }}">Settings</a>
                         </li>
                         @endif
 
