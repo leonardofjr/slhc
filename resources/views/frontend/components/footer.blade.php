@@ -8,7 +8,7 @@
             </p>
 
             <div>
-                <h5>Reach us through social media</h5>
+                <h5>Reach us at social media</h5>
                 <i class="fab fa-facebook fa-2x mr-2"></i>
                 <i class="fab fa-instagram fa-2x"></i>
             </div>

@@ -55,8 +55,9 @@ Stay in control of your health!<br><a href="/book-now"><button class="btn btn-se
 <div class="container-fluid row-3">
     <h2 class="text-center">Our Treatments</h2>
     @include('frontend.components.flip-cards')
-    <p class="text-center"><a href="/treatments">View All Our Treatments</a></p>
-    
+    <div class="d-flex justify-content-center">
+        <a href="/treatments"><button class="btn btn-primary">VIEW ALL TREATMENTS</button></a>
+    </div>    
 </div>
 
 <div class="container-fluid row-4">
@@ -95,6 +96,7 @@ Stay in control of your health!<br><a href="/book-now"><button class="btn btn-se
                                  <p>Lung Cleanse for smokers and non smokers Traditional herbal remedy to cleansing your lungs have been found in this list of herbs below:   1. Oregano Histamine reducing herbs like oregano aid in counteracting histamine and may help reduce these reactions. When pollen,... <br><a href="#">read more</a></p>
                                
                             </div>
+                            <a href="/blog"><button class="btn btn-primary">VIEW OUR BLOG</button></a>
                  
                 </div>
             </div>
