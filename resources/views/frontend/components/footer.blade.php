@@ -8,9 +8,13 @@
             </p>
 
             <div>
-                <h5>Reach us at social media</h5>
-                <i class="fab fa-facebook fa-2x mr-2"></i>
-                <i class="fab fa-instagram fa-2x"></i>
+                <h5>REACH US OUT AT SOCIAL MEDIA</h5>
+                @if ($facebook)
+                    <a href="{{$facebook}}"><i class="fab fa-facebook fa-2x mr-2"></i></a>
+                @endif
+                @if ($facebook)
+                   <a href="{{$instagram}}"><i class="fab fa-instagram fa-2x"></i></a>
+                @endif
             </div>
         </div>
         <div class="col-md-4 col-12">
@@ -24,6 +28,9 @@
         <div class="col-md-4 col-12">
             <h5>CONTACT</h5>
             @include('frontend.pages.partials.contact-info')
+            <a href="{{$facebook}}">
+                <img src="{{asset('assets/png/facebook-profile-image.png')}}" class="img-fluid" alt="">
+            </a>
             <!--
             <h3>SCHEDULE</h3>
             <table class="table">

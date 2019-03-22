@@ -36,5 +36,7 @@ class AppServiceProvider extends ServiceProvider
         view()->share('company_phone', $setting->phone);
         view()->share('company_email', $setting->email);
         view()->share('hours_of_operation', $hours_of_operation);
+        view()->share('facebook', $setting->facebook);
+        view()->share( 'instagram', $setting->instagram);
     }
 }
