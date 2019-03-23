@@ -30,6 +30,7 @@
             <div id="app" class="container">
                 <div class="row">
                     <div class="col-sm-3">
+                        <h4 class="text-center">Treatments</h4>
                         <app></app>
                     </div>
                     <div class="col-sm-9">

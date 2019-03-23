@@ -748,8 +748,8 @@ body {
   margin-left: 20px;
 }
 
-.main-wrapper {
-  margin: 70px auto !important;
+main .page-title {
+  margin-bottom: 3em;
 }
 
 #secondary-menu {
@@ -778,6 +778,7 @@ body {
 footer {
   background: #000;
   color: #fff;
+  margin-top: 3em;
 }
 
 footer a {

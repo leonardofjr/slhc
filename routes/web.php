@@ -21,6 +21,8 @@ Route::get('/', ['as' => 'Home', 'uses' => 'PagesController@getHomepage']);
 Route::get('/who-are-we',  ['as' => 'Who Are We', 'uses' => 'PagesController@getWhoAreWePage']);
 // ** Treatments ** //
 Route::get('/treatments',  ['as' => 'Treatments', 'uses' => 'PagesController@getTreatmentsPage']);
+Route::get('/treatments/{any}', 'PagesController@getTreatmentsPage')->where('any', '.*');
+
 
 // ** Testimonials ** //
 Route::get('/testimonials',  ['as' => 'Testimonials', 'uses' => 'PagesController@getTestimonialsPage']);
