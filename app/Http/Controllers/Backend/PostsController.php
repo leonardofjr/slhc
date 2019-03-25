@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Auth;
+use App\User;
 use App\Post;
 class PostsController extends Controller
 {
@@ -36,7 +38,22 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user_id = Auth::user()->id;
+        $user = User::findOrFail($user_id);
+
+        // Validating Request
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'content' =>'required',
+        ]);
+        $post = new Post();
+        $post->title =  $request->title;
+        $post->author_id =  $user_id;
+        $post->content =  $request->content;
+        $post->status =  ($request->visible == "on") ? true : false;
+        $post->save();
+        return redirect('/posts');   
+    
     }
 
     /**

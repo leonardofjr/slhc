@@ -80,7 +80,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/posts', 'Backend\PostsController@index')->name('Posts')->middleware('verified');
     Route::get('/posts/{id}', 'Backend\PostsController@edit')->name('Edit Post')->middleware('verified');
     Route::get('/create_post', 'Backend\PostsController@create')->name('Create Post')->middleware('verified');
-    Route::post('/posts', 'Backend\PostsController@store');
+    Route::post('/create_post', 'Backend\PostsController@store');
     Route::put('/posts/{id}', 'Backend\PostsController@update');
     Route::delete('/posts/{id}', 'Backend\PostsController@destroy')->name('Delete');
 

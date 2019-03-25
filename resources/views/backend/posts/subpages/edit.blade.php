@@ -2,7 +2,7 @@
 
 @section('content')
     <h2>{{\Request::route()->getName()}}</h2>
-    <form action="/services/{{$data->id}}" method="POST">
+    <form action="/update_post/{{$data->id}}" method="POST">
         {{ csrf_field() }}
 
         <div class="form-group row">

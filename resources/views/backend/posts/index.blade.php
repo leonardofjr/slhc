@@ -18,13 +18,13 @@
 
         <tbody>
         <tr>
-                <th scope="row">{{$item->id}}</th>
-                <td>{{$item->service_name}}</td>
-                <td>{{$item->slug}}</td>
-                <td>${{$item->service_price}}</td>
-                <td><a href="/services/{{$item->id}}"><i class="fas fa-edit"></i></a></td>
+                <th scope="row">{{$item->author_id}}</th>
+                <td>{{$item->title}}</td>
+                <td>{{ User::findOrFail($item->author_id)}}</td>
+                <td>{{$item->status}}</td>
+                <td><a href="/post/{{$item->id}}"><i class="fas fa-edit"></i></a></td>
                 <td>
-                <form action="/services/{{$item->id}}" method="post">
+                <form action="/post/{{$item->id}}" method="post">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="_method" value="delete" />
                                 <button type="submit" class="far fa-trash-alt"></button>

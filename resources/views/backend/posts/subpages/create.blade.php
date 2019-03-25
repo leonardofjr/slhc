@@ -2,7 +2,7 @@
 
 @section('content')
     <h2>{{\Request::route()->getName()}}</h2>
-    <form action="/services" method="POST">
+    <form action="/create_post" method="POST">
         {{ csrf_field() }}
 
         <div class="form-group row">
@@ -27,6 +27,13 @@
                     </span>
                  @endif
             </div>
+        </div>
+
+       <div class="form-check">
+            <input class="form-check-input " type="checkbox" id="visible" name="visible">
+            <label class="form-check-label" for="visible">
+                Visible
+            </label>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

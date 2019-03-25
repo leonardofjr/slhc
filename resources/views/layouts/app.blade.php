@@ -84,9 +84,9 @@
                             <a class="nav-link active" href="{{ route('Welcome') }}">Home</a>
                         </li>
                         @if(Auth::user()->hasRole('Admin'))
-                        <li class="nav-item">
+                      <!--  <li class="nav-item">
                             <a class="nav-link active" href="{{ route('Posts') }}">Posts</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ route('Users') }}">Users</a>
                         </li>
