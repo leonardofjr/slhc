@@ -16,21 +16,27 @@
                    <a href="{{$instagram}}"><i class="fab fa-instagram fa-2x"></i></a>
                 @endif
             </div>
+            <div class="mt-4">
+                <a href="{{$facebook}}">
+                    <img src="{{asset('assets/png/facebook-profile-image.png')}}" class="img-fluid" alt="">
+                </a>
+            </div>
+
         </div>
         <div class="col-md-4 col-12">
             <h5>NAVIGATION</h5>
             <ul>
                 @include('frontend.menus.primary-menu')
             </ul>
+
         </div>
 
      
         <div class="col-md-4 col-12">
             <h5>CONTACT</h5>
             @include('frontend.pages.partials.contact-info')
-            <a href="{{$facebook}}">
-                <img src="{{asset('assets/png/facebook-profile-image.png')}}" class="img-fluid" alt="">
-            </a>
+            @include('frontend.components.map')
+
         </div>
     </div>
 </section>

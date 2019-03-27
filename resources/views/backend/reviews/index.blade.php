@@ -23,7 +23,8 @@
  
                 <td><a href="/reviews/{{$item->id}}"><i class="fas fa-edit"></i></a></td>
                 <td>
-                <form action="api/reviews/{{$item->id}}" method="post">
+                <form action="/reviews/{{$item->id}}" method="post">
+                        {{ csrf_field() }}
                         <input type="hidden" name="_method" value="delete" />
                         <button type="submit" class="far fa-trash-alt"></button>
                 </form>

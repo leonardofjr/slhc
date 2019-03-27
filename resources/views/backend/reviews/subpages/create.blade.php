@@ -2,7 +2,7 @@
 
 @section('content')
     <h2>{{\Request::route()->getName()}}</h2>
-    <form action="/api/reviews" method="POST">
+    <form action="/reviews" method="POST">
         {{ csrf_field() }}
         <div class="form-group row">
             <label class="col-sm-2 col-form-label" for="fname">First Name</label>

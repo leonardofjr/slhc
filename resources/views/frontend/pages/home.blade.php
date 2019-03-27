@@ -85,7 +85,7 @@ Stay in control of your health!<br><a href="/book-now"><button class="btn btn-se
             </div>
         </div>
 </div>
-
+<!--
 <div class="container row-5">
         <div class="row">
             <div class="col-12 col-md-6 column-1">
@@ -109,6 +109,5 @@ Stay in control of your health!<br><a href="/book-now"><button class="btn btn-se
             </div>
         </div>
 </div>
-
- @include('frontend.components.map')
+-->
 @endsection

@@ -3,15 +3,13 @@
 @section('content')
 <div class="container">
     <div class="row mb-5">
-        <div class="col-md-6">
+        <div class="col-md-12 text-center">
             <h3 >Ancient Healing Techniques 
 Still Practiced Today</h3>
             <p>We treat acute or chronic stage conditions 
 From tension headaches to weight loss, common cold and much more. </p>
 <p>Our healing techniques revolves around the ancient art of Acupressure & Herbal Medicine. Our treatments are combined with other Chinese medicine modalities such as acupressure, tuina massage, cupping etc...</p>
 
-        </div>
-        <div class="col-md-6">
             <p>All Our treatments are performed based of consultation in order to determine the best possible holistic treatment plan using acupressure, herbs and other instruments to achieve harmony & tranquility.</p>
             <p> Our drug free treatment plans benefit the mind body & spirit of each Individual every time. </p>
             <p>

@@ -1,1 +1,1 @@
-<div id="map"></div>
+<div class="mt-5" id="map"></div>

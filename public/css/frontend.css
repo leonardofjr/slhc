@@ -218,6 +218,18 @@ header .main-heading span {
   cursor: pointer !important;
 }
 
+.btn-primary:hover {
+  background: #f16522;
+  border: 2px solid #fff;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  color: white !important;
+  cursor: pointer !important;
+  background-color: rgba(241, 101, 34, 0.8) !important;
+}
+
 .btn-secondary {
   background-color: #FFBF2D !important;
   color: white !important;
@@ -723,7 +735,6 @@ body {
   display: block;
   padding: 10px 0 10px;
   width: 85%;
-  border-bottom: 1px solid #ccc;
 }
 
 .mobile-navigation #nav-menu .sub-menu-item > a {

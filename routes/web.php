@@ -21,7 +21,7 @@ Route::get('/', ['as' => 'Home', 'uses' => 'PagesController@getHomepage']);
 Route::get('/who-are-we',  ['as' => 'Who Are We', 'uses' => 'PagesController@getWhoAreWePage']);
 // ** Treatments ** //
 Route::get('/treatments',  ['as' => 'Treatments', 'uses' => 'PagesController@getTreatmentsPage']);
-Route::get('/treatments/{any}', 'PagesController@getTreatmentsPage')->where('any', '.*');
+Route::get('/treatments/{any}', 'PagesController@getTreatmentsPage')->name(' Treatments ')->where('any', '.*');
 
 
 // ** Testimonials ** //
@@ -116,3 +116,7 @@ Route::group(['middleware' => 'auth'], function () {
     ]);
 
     Route::put('/settings', 'SettingsController@update');
+
+
+
+    

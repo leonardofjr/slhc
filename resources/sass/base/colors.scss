@@ -22,6 +22,12 @@
     color: white!important;
     cursor: pointer!important;
 } 
+.btn-primary:hover {
+    @include btn-border-line($primary-color, #fff);
+    color: white!important;
+    cursor: pointer!important;
+    background-color: $primary-color-hover!important;
+} 
 
 .btn-secondary {
     background-color: #FFBF2D!important;

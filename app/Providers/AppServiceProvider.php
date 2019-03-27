@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use App\Setting;
 use App\HoursOfOperation;
+use View;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -26,17 +27,22 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        $setting = Setting::first();
-        $hours_of_operation = HoursOfOperation::all();
-        view()->share('company_name', $setting->company_name);
-        view()->share('company_address',$setting->street_address);
-        view()->share('company_city',$setting->city);
-        view()->share('company_territory',$setting->province);
-        view()->share('company_postal_code',$setting->postal_code);
-        view()->share('company_phone', $setting->phone);
-        view()->share('company_email', $setting->email);
-        view()->share('hours_of_operation', $hours_of_operation);
-        view()->share('facebook', $setting->facebook);
-        view()->share( 'instagram', $setting->instagram);
+
+        if(!app()-> runningInConsole() ){
+            $setting = Setting::first();
+            $hours_of_operation = HoursOfOperation::all();
+            View::share('company_name', $setting->company_name);
+            View::share('company_address', $setting->street_address);
+            View::share('company_city', $setting->city);
+            View::share('company_territory', $setting->province);
+            View::share('company_postal_code', $setting->postal_code);
+            View::share('company_phone', $setting->phone);
+            View::share('company_email', $setting->email);
+            View::share('hours_of_operation', $hours_of_operation);
+            View::share('facebook', $setting->facebook);
+            View::share('instagram', $setting->instagram);
+        }
+
+
     }
 }
