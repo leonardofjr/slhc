@@ -8,6 +8,6 @@
 
 <p>Preferred Date: {{$date}}</p>
 
-<p>Message: {{$inquiry}}</p>
+<p>Message: {{$message}}</p>
 
 <small>This mail is sent via book form on sacredlighthealing.ca</small>

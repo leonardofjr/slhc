@@ -23,21 +23,18 @@
 
         <div class="form-group row">
             <div class="col-sm-12">
-                <textarea class="form-control {{ $errors->has('inquiry') ? ' is-invalid' : '' }}" id="inquiry" name="inquiry" aria-describedby="emailHelp" placeholder="Message">{{ old('inquiry') }}</textarea>
-                    @if ($errors->has('inquiry'))
+                <textarea class="form-control {{ $errors->has('message') ? ' is-invalid' : '' }}" id="message" name="message" placeholder="Message">{{ old('message') }}</textarea>
+                    @if ($errors->has('message'))
                         <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('inquiry') }}</strong>
+                            <strong>{{ $errors->first('message') }}</strong>
                         </span>
                      @endif    
             </div>
         </div>
         
         <div class="form-group">
-            <div class="g-recaptcha " data-size="compact" data-sitekey="6LcFrGoUAAAAAE9nwReZ-oKM5nff7vL3AiLw_Uo1"></div>
+            <div class="g-recaptcha" data-size="compact" data-sitekey="6LcFrGoUAAAAAE9nwReZ-oKM5nff7vL3AiLw_Uo1"></div>
         </div>
-        <div class="flash-message-recaptcha-token alert alert-info d-none">
-            <span></span>
-        </div> 
         
         <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
     </form>

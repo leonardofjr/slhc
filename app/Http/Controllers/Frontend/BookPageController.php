@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Service; 
-
+use App\Service;
+use App\Mail\Book;
+use Illuminate\Support\Facades\Mail;
 class BookPageController extends Controller
 {
     /**
@@ -36,22 +37,18 @@ class BookPageController extends Controller
      */
     public function store(Request $request)
     {
-        $data = [
-            'name' => $request->input('name'),
-            'phone' => $request->input('phone'),
-            'email' => $request->input('email'),
-            'interests' => $request->input('interests'),
-            'date' => $request->input('date'),
-            'inquiry' => $request->input('inquiry'),
-            'recaptchaToken' => $request->input('g-recaptcha-response'),
 
-        ];
+        $data = request()->validate([
+            'name' => 'required',
+            'phone' => 'required',
+            'interests' => 'required',
+            'email' => 'required|email',
+            'date' => 'required',
+            'message' => 'required',
+        ]);
 
-        Mail::send('emails.process-book-now', $data, function ($m) use ($data) {
-            $m->from($data['email'], $data['name']);
-            $m->to('mfelipa@sacredlighthealing.ca')->subject('This mail is sent via book now form on sacredlighthealing.ca');
-        });
-        return view('frontend.pages.home');    
+        Mail::to('mfelipa@sacredlighthealing.ca')->send(new Book($data));
+        return view('frontend.pages.home');     
     }
 
     /**

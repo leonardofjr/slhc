@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\Contact;
+use Illuminate\Support\Facades\Mail;
 
 class ContactPageController extends Controller
 {
@@ -35,20 +37,13 @@ class ContactPageController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $data = [
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'inquiry' => $request->input('inquiry'),
-            'recaptchaToken' => $request->input('g-recaptcha-response'),
-        ];
+        $data = request()->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required',
+        ]);
 
-
-
-        Mail::send('emails.process-contact', $data, function ($m) use ($data) {
-            $m->from($data['email'], $data['name']);
-            $m->to('mfelipa@sacredlighthealing.ca')->subject('This mail is sent via contact form on sacredlighthealing.ca');
-        });
+        Mail::to('mfelia@sacredlighthealing.ca')->send(new Contact($data));
         return view('frontend.pages.home');    
     }
 

@@ -60,10 +60,10 @@
 
             <div class="form-group row">
                 <div class="col-sm-12">
-                    <textarea class="form-control {{ $errors->has('inquiry') ? ' is-invalid' : '' }}" id="inquiry" name="inquiry" aria-describedby="emailHelp" placeholder="Message">{{ old('inquiry') }}</textarea>
-                        @if ($errors->has('inquiry'))
+                    <textarea class="form-control {{ $errors->has('message') ? ' is-invalid' : '' }}" id="message" name="message" aria-describedby="emailHelp" placeholder="Message">{{ old('message') }}</textarea>
+                        @if ($errors->has('message'))
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('inquiry') }}</strong>
+                                <strong>{{ $errors->first('message') }}</strong>
                             </span>
                         @endif    
                 </div>
