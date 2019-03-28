@@ -1,5 +1,5 @@
 
-    <form action="/contact" method="POST">
+    <form action="/book-now" method="POST">
             {{ csrf_field() }}
             <div class="form-group row">
                 <div class="col-sm-12">
@@ -40,7 +40,7 @@
             @foreach ( $services as $service )
 
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="{{$service["service_name"]}}" name="interests[]">
+                <input type="checkbox" class="form-check-input" id="{{$service["service_name"]}}" value="{{$service["service_name"]}}" name="interests[]">
                 <label class="form-check-label" for="{{$service["service_name"]}}">{{$service["service_name"]}}</label>
             </div>
             @endforeach

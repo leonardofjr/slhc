@@ -13,7 +13,7 @@
                 <h4>LEAVE US A REVIEW TODAY</h4>
             </div>
             <div class="col-md-8 py-5 align-self-center">
-                <form action="/reviews" method="POST">
+                <form action="/create_testimonial" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label" for="fname">First Name</label>

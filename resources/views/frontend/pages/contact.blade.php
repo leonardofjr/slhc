@@ -22,7 +22,7 @@
             </div>
 
 
-            <div class="col-sm-7">
+            <div class="col-sm-7 ">
                 <h4>Ask a question</h4>
                 @include('frontend.components/contact-form')
             </div>

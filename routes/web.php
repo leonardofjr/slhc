@@ -25,18 +25,18 @@ Route::get('/treatments/{any}', 'PagesController@getTreatmentsPage')->name(' Tre
 
 
 // ** Testimonials ** //
-Route::get('/testimonials',  ['as' => 'Testimonials', 'uses' => 'PagesController@getTestimonialsPage']);
+Route::get('/testimonials',  ['as' => 'Testimonials', 'uses' => 'Frontend\TestimonialsPageController@index']);
+Route::post('/create_testimonial',  'Frontend\TestimonialsPageController@store');
 
 // ** Contact ** //
-Route::get('/contact',  ['as' => 'Contact', 'uses' => 'PagesController@getContactPage']);
+Route::get('/contact',  ['as' => 'Contact', 'uses' => 'Frontend\ContactPageController@create']);
+Route::post('/contact', 'Frontend\ContactPageController@store');
 
 // ** Book Now ** //
-Route::get('/book-now',  ['as' => 'Book Now', 'uses' => 'PagesController@getBookNowPage']);
+Route::get('/book-now',  ['as' => 'Book Now', 'uses' => 'Frontend\BookPageController@create']);
+Route::post('/book-now', 'Frontend\BookPageController@store');
 
-// ** POST Routes ** //
 
-Route::post('/contact', 'FormsController@postContact');
-Route::post('/book-now', 'FormsController@postBookNow');
 
 // ** Admin** //
 Route::group(['middleware' => 'auth'], function () {
