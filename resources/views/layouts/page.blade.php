@@ -34,7 +34,7 @@
                         <app></app>
                     </div>
                     <div class="col-sm-9">
-                        <router-view></router-view>
+                        <router-view :key="$route.fullPath"></router-view>
                     </div>
                 </div>
             </div>

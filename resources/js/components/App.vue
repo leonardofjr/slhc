@@ -1,7 +1,7 @@
 <template>     
       <div class="row">
           <ul class="nav flex-column">
-            <li v-for="item in data" class="nav-item" :key="item">
+            <li v-for="(item, i) in data" class="nav-item" :key="item + '-' + i">
               <router-link class="nav-link active" :to="'/treatments/' + item.slug">{{item.service_name}}</router-link>
             </li>          
          </ul>

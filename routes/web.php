@@ -72,8 +72,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/user', 'Backend\UsersController@store');
     Route::put('/users/{id}', 'Backend\UsersController@update');
     Route::delete('/users/{id}', 'Backend\UsersController@destroy');
-    Route::get('/create_user', 'Backend\UsersController@create')->name('Add User')->middleware('verified');
-
 
 
     /** Posts **/

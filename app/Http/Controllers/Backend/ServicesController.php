@@ -43,7 +43,6 @@ class ServicesController extends Controller
         // Validating Request
         $validatedData = $request->validate([
             'service_name' => 'required',
-            'slug' =>'required',
             'service_duration' =>'required',
             'service_price' =>'required',
             'short_description' =>'required',
@@ -52,7 +51,7 @@ class ServicesController extends Controller
 
         $service = new Service();
         $service->service_name =  $request->service_name;
-        $service->slug =  $request->slug;
+        $service->slug =  str_replace(' ','_',strtolower($request->service_name));
         $service->duration =  $request->service_duration;
         $service->service_price =  $request->service_price;
         $service->short_description =  $request->short_description;
@@ -96,16 +95,15 @@ class ServicesController extends Controller
         // Validating Request
         $validatedData = $request->validate([
             'service_name' => 'required',
-            'slug' =>'requ  ired',
-            'service_duration' =>'requ  ired',
-            'service_price' =>'requ  ired',
-            'short_description' =>'requ  ired',
-            'detailed_description' =>'requ  ired',
+            'service_duration' =>'required',
+            'service_price' =>'required',
+            'short_description' =>'required',
+            'detailed_description' =>'required',
         ]);
 
         $service = Service::findOrFail($id);
         $service->service_name =  $request->service_name;
-        $service->slug =  $request->slug;
+        $service->slug =  str_replace(' ','_',strtolower($request->service_name)) ;
         $service->duration =  $request->service_duration;
         $service->service_price =  $request->service_price;
         $service->short_description =  $request->short_description;

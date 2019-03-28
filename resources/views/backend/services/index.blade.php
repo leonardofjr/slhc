@@ -8,7 +8,6 @@
         <tr>
         <th scope="col">id</th>
         <th scope="col">Service Name</th>
-        <th scope="col">Slug</th>
         <th scope="col">Price</th>
         <th scope="col">Edit</th>
         <th scope="col">Delete</th>
@@ -20,7 +19,6 @@
         <tr>
                 <th scope="row">{{$item->id}}</th>
                 <td>{{$item->service_name}}</td>
-                <td>{{$item->slug}}</td>
                 <td>${{$item->service_price}}</td>
                 <td><a href="/services/{{$item->id}}"><i class="fas fa-edit"></i></a></td>
                 <td>

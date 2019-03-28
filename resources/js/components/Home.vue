@@ -1,9 +1,9 @@
 <template>
         <div id="home" class=" row">
                 <div class="col-md-12">
-                    <div v-for="item in data" :key="item">
+                    <div v-for="(item, i ) in data" :key="item + '-' + i">
                         <h3><router-link :to="'/treatments/' + item.slug">{{item.service_name}}</router-link></h3>
-                        <p>{{item.detailed_description}}</p>
+                        <div v-html="item.short_description"></div>
                         <div class="d-flex flex-row justify-content-end mb-3">
                             <strong>${{item.service_price.toFixed(2)}}/{{item.duration}}min</strong>
                         </div>

@@ -3,7 +3,8 @@
         <div class="row ">
             <div class="col-sm-12">
                     <h3>{{data.service_name}}</h3>
-                    <p>{{data.detailed_description}}</p>
+                    <div v-html="data.detailed_description">
+                    </div>
                     <div class="d-flex flex-row justify-content-end mb-3">
                         <strong>{{data.service_price}}min/{{data.duration}}min</strong>
                     </div>

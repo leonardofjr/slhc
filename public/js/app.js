@@ -1873,6 +1873,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -36938,10 +36939,10 @@ var render = function() {
     _c(
       "ul",
       { staticClass: "nav flex-column" },
-      _vm._l(_vm.data, function(item) {
+      _vm._l(_vm.data, function(item, i) {
         return _c(
           "li",
-          { key: item, staticClass: "nav-item" },
+          { key: item + "-" + i, staticClass: "nav-item" },
           [
             _c(
               "router-link",
@@ -36985,8 +36986,8 @@ var render = function() {
     _c(
       "div",
       { staticClass: "col-md-12" },
-      _vm._l(_vm.data, function(item) {
-        return _c("div", { key: item }, [
+      _vm._l(_vm.data, function(item, i) {
+        return _c("div", { key: item + "-" + i }, [
           _c(
             "h3",
             [
@@ -36997,7 +36998,9 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(item.detailed_description))]),
+          _c("div", {
+            domProps: { innerHTML: _vm._s(item.short_description) }
+          }),
           _vm._v(" "),
           _c(
             "div",
@@ -37060,7 +37063,9 @@ var render = function() {
       _c("div", { staticClass: "col-sm-12" }, [
         _c("h3", [_vm._v(_vm._s(_vm.data.service_name))]),
         _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.data.detailed_description))]),
+        _c("div", {
+          domProps: { innerHTML: _vm._s(_vm.data.detailed_description) }
+        }),
         _vm._v(" "),
         _c("div", { staticClass: "d-flex flex-row justify-content-end mb-3" }, [
           _c("strong", [

@@ -16,17 +16,7 @@
                  @endif
             </div>
         </div>
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label" for="slug">Slug</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control {{ $errors->has('slug') ? ' is-invalid' : '' }}" id="slug" name="slug" value="{{ old('slug') }}"  placeholder="chinese-medicine">
-                    @if ($errors->has('slug'))
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('slug') }}</strong>
-                        </span>
-                     @endif
-            </div>
-        </div>
+
         <div class="form-group row">
             <label class="col-sm-2 col-form-label" for="service_duration">Duration</label>
             <div class="col-sm-4">
