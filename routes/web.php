@@ -47,7 +47,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 /** Backend **/
 
-    Auth::routes(['verify' => true]);
+    Auth::routes(['verify' => true, 'register' => false]);
 
     /** Home **/
     Route:: get('/home', 'BackendController@index')->name('Welcome');
