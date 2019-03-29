@@ -37,7 +37,7 @@
                             <h2>A Healthy Qi body brings 
 optimal health and gives you more energy</h2>
                             <p>Live More, Do More, Feel Good
-Stay in control of your health!<br><a href="/book-now"><button class="btn btn-secondary mt-3">Book Now</button></a></p>
+Stay in control of your health!<br><a href="/book-now"  ><button class="btn btn-secondary mt-3" style="padding: 15px 40px!important; font-size: 1em;">Book Now</button></a></p>
                              
                         </div>
                  

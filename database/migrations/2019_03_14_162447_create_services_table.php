@@ -18,7 +18,7 @@ class CreateServicesTable extends Migration
             $table->string('service_name');
             $table->string('slug');
             $table->integer('service_price');
-            $table->string('duration');
+            $table->integer('duration');
             $table->text('short_description');
             $table->text('detailed_description');
         });

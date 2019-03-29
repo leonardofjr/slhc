@@ -15,7 +15,7 @@ class CreateDurationDropdownsTable extends Migration
     {
         Schema::create('duration_dropdowns', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->integer('duration');
         });
     }
 

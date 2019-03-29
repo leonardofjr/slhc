@@ -22,9 +22,9 @@
             <div class="col-sm-4">
                 <select type="dropdown" class="form-control {{ $errors->has('service_duration') ? ' is-invalid' : '' }}" id="service_duration" name="service_duration"  placeholder="Hour">
                     <option value="" selected> Choose...</option>
-                    <option value="15" {{ old('service_duration') == "15"  ? "selected" : "" }}>15min</option>
-                    <option value="30" {{ old('service_duration') == "30"  ? "selected" : "" }}>30min</option>
-                    <option value="60" {{ old('service_duration') == "60"  ? "selected" : "" }}>60min</option>
+                    @foreach ($durationDropdown as $durationDropdownItem )
+                            <option value="{{$durationDropdownItem["duration"]}}" {{ old('service_duration') == $durationDropdownItem["duration"]  ? "selected" : "" }}>{{gmdate("H:i",$durationDropdownItem["duration"])}}</option>
+                    @endforeach
                 </select>
                 @if ($errors->has('service_duration'))
                     <span class="invalid-feedback" role="alert">

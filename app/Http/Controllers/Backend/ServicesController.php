@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Service;
+use App\DurationDropdown;
 
 class ServicesController extends Controller
 {
@@ -26,8 +27,9 @@ class ServicesController extends Controller
      */
     public function create(Request $request)
     {
+        $duration_dropdown = DurationDropdown::all();
 
-        return view('backend.services.subpages.create');
+        return view('backend.services.subpages.create')->withDurationDropdown($duration_dropdown);
 
 
     }

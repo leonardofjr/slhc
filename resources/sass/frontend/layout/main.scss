@@ -1,5 +1,11 @@
 main {
+    margin-top: 83.34px;
+
     .page-title {
          margin-bottom: 3em;
+    }
+
+    @include breakpoint(md) {
+        margin-top: 0;
     }
 }

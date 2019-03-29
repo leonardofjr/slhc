@@ -16,6 +16,7 @@ class SettingsController extends Controller
      */
     public function index()
     {
+
         $user = User::findOrFail(Auth::user()->id);
         $setting = $user->settings->first();
         $hoursOfOperation = $user->hoursOfOperations;

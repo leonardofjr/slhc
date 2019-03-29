@@ -17,6 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ReviewTableSeeder::class);
         $this->call(ServiceTableSeeder::class);
         $this->call(UserTableSeeder::class);
-
+        $this->call(DurationDropdownTableSeeder::class);
     }
 }
