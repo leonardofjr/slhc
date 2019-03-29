@@ -8,3 +8,13 @@
     display: block;
     text-decoration: none;
 }
+
+.service-price,
+.service-duration {
+    font-weight: 800;
+    font-size: 1.2em;
+}
+
+.service-price {
+    color: red;
+}

@@ -1823,6 +1823,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1839,6 +1846,15 @@ __webpack_require__.r(__webpack_exports__);
     }).catch(function (e) {
       _this.errors.push(e);
     });
+  },
+  methods: {
+    secondsToHms: function secondsToHms(d) {
+      d = Number(d);
+      var h = Math.floor(d / 3600);
+      var m = Math.floor(d % 3600 / 60);
+      var s = Math.floor(d % 3600 % 60);
+      return ('0' + h).slice(-2) + ":" + ('0' + m).slice(-2) + ":" + ('0' + s).slice(-2);
+    }
   }
 });
 
@@ -1874,6 +1890,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1888,6 +1911,15 @@ __webpack_require__.r(__webpack_exports__);
     }).catch(function (e) {
       _this.errors.push(e);
     });
+  },
+  methods: {
+    secondsToHms: function secondsToHms(d) {
+      d = Number(d);
+      var h = Math.floor(d / 3600);
+      var m = Math.floor(d % 3600 / 60);
+      var s = Math.floor(d % 3600 % 60);
+      return ('0' + h).slice(-2) + ":" + ('0' + m).slice(-2) + ":" + ('0' + s).slice(-2);
+    }
   }
 });
 
@@ -37004,16 +37036,22 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "d-flex flex-row justify-content-end mb-3" },
+            { staticClass: "d-flex flex-row justify-content-end my-3" },
             [
-              _c("strong", [
-                _vm._v(
-                  "$" +
-                    _vm._s(item.service_price.toFixed(2)) +
-                    "/" +
-                    _vm._s(item.duration) +
-                    "min"
-                )
+              _c("div", { staticClass: "d-flex flex-column text-right" }, [
+                _c("span", [
+                  _c("strong", [_vm._v("Price: ")]),
+                  _c("span", { staticClass: "service-price" }, [
+                    _vm._v("$" + _vm._s(item.service_price))
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("span", [
+                  _c("strong", [_vm._v("Duration: ")]),
+                  _c("span", { staticClass: "service-duration" }, [
+                    _vm._v(_vm._s(_vm.secondsToHms(item.duration)))
+                  ])
+                ])
               ])
             ]
           ),
@@ -37067,14 +37105,21 @@ var render = function() {
           domProps: { innerHTML: _vm._s(_vm.data.detailed_description) }
         }),
         _vm._v(" "),
-        _c("div", { staticClass: "d-flex flex-row justify-content-end mb-3" }, [
-          _c("strong", [
-            _vm._v(
-              _vm._s(_vm.data.service_price) +
-                "min/" +
-                _vm._s(_vm.data.duration) +
-                "min"
-            )
+        _c("div", { staticClass: "d-flex flex-row justify-content-end my-3" }, [
+          _c("div", { staticClass: "d-flex flex-column text-right" }, [
+            _c("span", [
+              _c("strong", [_vm._v("Price: ")]),
+              _c("span", { staticClass: "service-price" }, [
+                _vm._v("$" + _vm._s(_vm.data.service_price))
+              ])
+            ]),
+            _vm._v(" "),
+            _c("span", [
+              _c("strong", [_vm._v("Duration: ")]),
+              _c("span", { staticClass: "service-duration" }, [
+                _vm._v(_vm._s(_vm.secondsToHms(_vm.data.duration)))
+              ])
+            ])
           ])
         ]),
         _vm._v(" "),

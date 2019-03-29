@@ -23,7 +23,7 @@
                 <select type="dropdown" class="form-control {{ $errors->has('service_duration') ? ' is-invalid' : '' }}" id="service_duration" name="service_duration"  placeholder="Hour">
                     <option value="" selected> Choose...</option>
                     @foreach ($durationDropdown as $durationDropdownItem )
-                            <option value="{{$durationDropdownItem["duration"]}}" {{ old('service_duration') == $durationDropdownItem["duration"]  ? "selected" : "" }}>{{gmdate("H:i",$durationDropdownItem["duration"])}}</option>
+                            <option value="{{$durationDropdownItem["duration"]}}" {{ old('service_duration') == $durationDropdownItem["duration"]  ? "selected" : "" }}>{{gmdate("H:i:s",$durationDropdownItem["duration"])}}</option>
                     @endforeach
                 </select>
                 @if ($errors->has('service_duration'))

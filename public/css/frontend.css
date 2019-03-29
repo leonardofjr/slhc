@@ -848,6 +848,16 @@ footer svg {
   text-decoration: none;
 }
 
+.service-price,
+.service-duration {
+  font-weight: 800;
+  font-size: 1.2em;
+}
+
+.service-price {
+  color: red;
+}
+
 .primary-bg-color {
   background: #f16522;
 }
