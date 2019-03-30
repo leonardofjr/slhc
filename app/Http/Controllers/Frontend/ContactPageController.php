@@ -43,7 +43,7 @@ class ContactPageController extends Controller
             'message' => 'required',
         ]);
 
-        Mail::to('mfelia@sacredlighthealing.ca')->send(new Contact($data));
+        Mail::to('mfelipa@sacredlighthealing.ca')->send(new Contact($data));
         return view('frontend.pages.home');    
     }
 

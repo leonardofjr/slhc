@@ -51941,7 +51941,7 @@ vue__WEBPACK_IMPORTED_MODULE_1___default.a.mixin({
   data: function data() {
     return {
       get web_url() {
-        return "http://localhost:8000/api/";
+        return "https://sacredlighthealing.ca/api/";
       }
 
     };

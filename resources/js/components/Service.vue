@@ -34,6 +34,7 @@
             };
         },
         mounted() {
+
             axios.get(this.web_url + 'service/' + this.$route.params.slug)
             .then(response => {
             this.data = response.data;

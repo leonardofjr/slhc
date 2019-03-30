@@ -1,6 +1,7 @@
 
 .navbar {
   background: $navbar-bg;
+  z-index: 10000;
   .navbar-brand {
     width: 200px;
   }

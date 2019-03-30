@@ -26,7 +26,7 @@ Route::get('/treatments/{any}', 'PagesController@getTreatmentsPage')->name(' Tre
 
 // ** Testimonials ** //
 Route::get('/testimonials',  ['as' => 'Testimonials', 'uses' => 'Frontend\TestimonialsPageController@index']);
-Route::post('/create_testimonial',  'Frontend\TestimonialsPageController@store');
+Route::post('/testimonials',  'Frontend\TestimonialsPageController@store');
 
 // ** Contact ** //
 Route::get('/contact',  ['as' => 'Contact', 'uses' => 'Frontend\ContactPageController@create']);

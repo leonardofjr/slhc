@@ -29,7 +29,6 @@ class ContactFormValidationRequest extends Request
                 'name' => 'required|min:2|max:25',
                 'email' => 'required|email',
                 'inquiry' => 'required',
-                'g-recaptcha-response' => 'required',
         ];
     }
 

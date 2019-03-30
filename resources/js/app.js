@@ -32,7 +32,7 @@ Vue.mixin({
     data: function () {
         return {
             get web_url() {
-                return "http://localhost:8000/api/";
+                return "https://sacredlighthealing.ca/api/";
             }
         }
     }

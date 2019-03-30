@@ -37,7 +37,7 @@
             axios.get(this.web_url + 'services')
             .then(response => {
                 console.log(response);
-            this.data = response.data;
+                this.data = response.data;
             })
             .catch(e => {
                 this.errors.push(e)
