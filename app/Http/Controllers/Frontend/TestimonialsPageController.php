@@ -54,7 +54,7 @@ class TestimonialsPageController extends Controller
             $review->verified = false;
         }
         $review->save();
-        return redirect('/testimonials');   
+        return redirect('/');   
      }
 
     /**

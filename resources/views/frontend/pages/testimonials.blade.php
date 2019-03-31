@@ -64,7 +64,7 @@
             @foreach ($reviews as $key => $review )
             @if ($review->verified)
                 <div class="testimonial col-md-4">
-                    <p class="name py-0 my-0 font-weight-bold">{{$review->fname}}</p>
+                    <p class="name py-0 my-0 font-weight-bold">{{$review->fname}} {{$review->lname}}</p>
                     <p class="date">{{date_format($review->created_at, 'd/M/Y')}}</p>
                     <p class="content font-italic">{{$review->review}}</p>
                     <hr class="py-3">
