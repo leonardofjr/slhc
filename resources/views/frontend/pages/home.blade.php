@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-12 col-md-6 column-1">
                     <span class="img-wrap">
-                        <img src="assets/miguel-felipa.jpg" alt="">
+                        <img src="assets/png/yin-yang.png" alt="An image of a yin yang.">
                     </span>
           
              </div>
