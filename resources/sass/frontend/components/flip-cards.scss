@@ -3,7 +3,7 @@
     color: #fff!important;
 }
 .card-container .front h2 {
-    text-align: right;
+    text-align: center;
 }
 .card-container {
     padding: 0;
@@ -38,31 +38,33 @@
 
 .flipper .back {
   background: rgb(241, 101, 34);
+  background-image: url("/assets/png/yin-yang-bg.png");
+  background-position: center;
 }
 
 /* Set Images */
 
 
 .card-container:nth-child(1) .flip-container .front {
-  background-image: url("/assets/gif/traditional-chinese-medicine.gif");
+  background-image: url("/assets/png/acupressure.png");
     background-repeat: no-repeat;
   background-size: cover; 
 }
 
 .card-container:nth-child(2) .flip-container .front {
-  background-image: url("/assets/gif/sacred-crystal-healing.gif");
+  background-image: url("/assets/png/massage.png");
     background-repeat: no-repeat;
   background-size: cover; 
 }
 
 .card-container:nth-child(3) .flip-container .front {
-  background-image: url("/assets/gif/inca-shamanic-healing.gif");
+  background-image: url("/assets/png/herbal-medicine.png");
     background-repeat: no-repeat;
   background-size: cover; 
 }
 
 .card-container:nth-child(4) .flip-container .front {
-  background-image: url("/assets/gif/reiki-healing.gif");
+  background-image: url("/assets/png/reiki.png");
     background-repeat: no-repeat;
   background-size: cover; 
 }
@@ -72,8 +74,10 @@
 .front .content {
   position: absolute;
   display: block;
-  bottom: 10%;
-  right: 5%;
+  top: 50%;
+  left: 50%;
+  width: 85%;
+  transform: translate(-50%, -50%);
 }
 
 /* Back Content */

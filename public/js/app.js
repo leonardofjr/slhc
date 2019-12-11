@@ -52414,9 +52414,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/WolfDesigns/dev/slhc/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/WolfDesigns/dev/slhc/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /Users/WolfDesigns/dev/slhc/resources/sass/frontend.scss */"./resources/sass/frontend.scss");
+__webpack_require__(/*! C:\wamp64\www\html\slhc\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\wamp64\www\html\slhc\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\wamp64\www\html\slhc\resources\sass\frontend.scss */"./resources/sass/frontend.scss");
 
 
 /***/ })

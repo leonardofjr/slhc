@@ -490,7 +490,7 @@ body {
 }
 
 .card-container .front h2 {
-  text-align: right;
+  text-align: center;
 }
 
 .card-container {
@@ -537,30 +537,32 @@ body {
 
 .flipper .back {
   background: #f16522;
+  background-image: url("/assets/png/yin-yang-bg.png");
+  background-position: center;
 }
 
 /* Set Images */
 
 .card-container:nth-child(1) .flip-container .front {
-  background-image: url("/assets/gif/traditional-chinese-medicine.gif");
+  background-image: url("/assets/png/acupressure.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .card-container:nth-child(2) .flip-container .front {
-  background-image: url("/assets/gif/sacred-crystal-healing.gif");
+  background-image: url("/assets/png/massage.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .card-container:nth-child(3) .flip-container .front {
-  background-image: url("/assets/gif/inca-shamanic-healing.gif");
+  background-image: url("/assets/png/herbal-medicine.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .card-container:nth-child(4) .flip-container .front {
-  background-image: url("/assets/gif/reiki-healing.gif");
+  background-image: url("/assets/png/reiki.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -570,8 +572,11 @@ body {
 .front .content {
   position: absolute;
   display: block;
-  bottom: 10%;
-  right: 5%;
+  top: 50%;
+  left: 50%;
+  width: 85%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 /* Back Content */
@@ -755,23 +760,6 @@ footer svg {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-/** Row 1 Starts Here **/
-
-main section:nth-child(1) .card {
-  padding: 20px 25px;
-  max-width: 100%;
-}
-
-main section:nth-child(1) .img-wrap img {
-  margin-top: 50px;
-  width: 50%;
-}
-
-main section:nth-child(1) .column-2 {
-  margin: 70px 0;
-  z-index: 200;
-}
-
 /** Row 1 Ends Here **/
 
 /** Row 2 Starts Here **/
@@ -798,7 +786,6 @@ main section:nth-child(1) .column-2 {
 @media (min-width: 768px) {
   .row-2 {
     position: relative;
-    top: -251px;
   }
 
   .row-2 .column-1 .inner-text {
@@ -808,16 +795,14 @@ main section:nth-child(1) .column-2 {
   .row-2 .column-2 img {
     display: block;
     position: absolute;
-    top: 125px;
     right: 0;
-    width: 100%;
+    width: 80%;
   }
 }
 
 @media (min-width: 992px) {
   .row-2 {
     position: relative;
-    top: -255px;
   }
 }
 

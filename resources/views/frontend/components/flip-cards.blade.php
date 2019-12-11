@@ -5,8 +5,8 @@
             <div class="flipper">
                 <!-- front content -->
                 <div class="front">
-                    <div class="content text-right">
-                        <h2>Traditional<br/>Chinese Medicine</h2>
+                    <div class="content">
+                        <h2>Acupressure</h2>
                         <hr>
                     </div>
                     <!-- front content -->
@@ -14,7 +14,7 @@
                 <!-- back content -->
                 <div class="back text-center">
                     <div class="content">
-                        <h2>Traditional</br>Chinese Medicine</h2>
+                        <h2>Acupressure</h2>
                         <p>Natural health care system that dates back thousands of years old.</p>
                     </div>
                     <!--<div class="plus-sign"><a href="treatments/traditional-chinese-medicine/">+</a></div>-->
@@ -30,7 +30,7 @@
                 <!-- front content -->
                 <div class="front">
                     <div class="content">
-                        <h2>Sacred<br/>Crystal Healing</h2>
+                        <h2>Massage</h2>
                         <hr>
                     </div>
                     <!-- front content -->
@@ -38,7 +38,7 @@
                 <!-- back content -->
                 <div class="back text-center">
                     <div class="content">
-                        <h2>Sacred Crystal Healing</h2>
+                        <h2>Massage</h2>
                         <p>Treats the whole person as well as the energy body.</p>
                     </div>
                     <!--<div class="plus-sign"><a href="treatments/sacred-crystal-healing/">+</a></div>-->
@@ -54,7 +54,7 @@
                 <!-- front content -->
                 <div class="front">
                     <div class="content">
-                        <h2>Inca<br/>Shamanic Healing</h2>
+                        <h2>Herbal Medicine</h2>
                         <hr>
                     </div>
                     <!-- front content -->
@@ -62,7 +62,7 @@
                 <!-- back content -->
                 <div class="back text-center">
                     <div class="content">
-                        <h2>Inca</br>Shamanic Healing</h2>
+                        <h2>Herbal Medicine</h2>
                         <p>We offer traditional shamanic inka healing that is practiced across the Andes and is now being offered here at our centre.</p>
                     </div>
                     <!--<div class="plus-sign"><a href="treatments/inka-shamanic-healing/">+</a></div>-->
