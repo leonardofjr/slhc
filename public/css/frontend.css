@@ -484,6 +484,11 @@ body {
   display: none;
 }
 
+.lf-line {
+  background-color: white;
+  width: 20%;
+}
+
 .card-container h2,
 .card-container p {
   color: #fff !important;
