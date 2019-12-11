@@ -784,6 +784,7 @@ main section:nth-child(1) .column-2 {
 
 .row-2 .column-1 {
   z-index: 1000;
+  background-image: url("/assets/png/chinese-pattern.png");
 }
 
 .row-2 .column-1 .inner-text {

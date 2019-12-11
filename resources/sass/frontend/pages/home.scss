@@ -32,6 +32,8 @@ main section:nth-child(1) {
     
     .column-1 {
         z-index: 1000;
+        background-image: url("/assets/png/chinese-pattern.png");
+
     }
     .column-1 .inner-text {
             padding: 120px 20px;

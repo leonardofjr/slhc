@@ -34,7 +34,7 @@
             <div class="col-12 col-md-8 column-1">
      
                    
-                        <div class="inner-text  primary-bg-color text-right">
+                        <div class="inner-text  text-right">
                             <h2 class="text-uppercase">A Healthy Qi body brings 
 optimal health and gives you more energy</h2>
                             <p>Live More, Do More, Feel Good
