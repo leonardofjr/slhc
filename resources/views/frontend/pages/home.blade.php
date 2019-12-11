@@ -1,11 +1,12 @@
 @extends('layouts.default')
-@section('title', 'Sacred Light Healing Centre')
+
+@section('title', 'Alternative Medicine - Markham, Stouffville')
+@section('meta-description-content', 'Our practice revolves around the ancient healing arts of traditional healing.')
+
 @section('content')
-
-
-<div class="container row-1">
+<section class="container row-1">
         <div class="row">
-            <div class="col-12 col-md-6 column-1">
+            <div class="col-12 col-md-6 text-center ">
                     <span class="img-wrap">
                         <img src="assets/png/yin-yang.png" alt="An image of a yin yang.">
                     </span>
@@ -26,7 +27,7 @@
              
             </div>
         </div>
-</div>
+    </section>
 
 <div class="container-fluid row-2">
         <div class="row">
@@ -34,7 +35,7 @@
      
                    
                         <div class="inner-text  primary-bg-color text-right">
-                            <h2>A Healthy Qi body brings 
+                            <h2 class="text-uppercase">A Healthy Qi body brings 
 optimal health and gives you more energy</h2>
                             <p>Live More, Do More, Feel Good
 Stay in control of your health!<br><a href="/book-now"  ><button class="btn btn-secondary mt-3" style="padding: 15px 40px!important; font-size: 1em;">Book Now</button></a></p>

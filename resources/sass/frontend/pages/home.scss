@@ -5,16 +5,16 @@
 
 
 /** Row 1 Starts Here **/
-.row-1 {
+main section:nth-child(1) {
 
     .card {
        padding: 20px 25px;
        max-width: 100%;
     }
 
-    .column-1 .img-wrap img {
+    .img-wrap img {
         margin-top: 50px;
-        width: 87%;
+        width: 50%;;
     }
     .column-2 {
         margin: 70px 0;
@@ -35,12 +35,7 @@
     }
     .column-1 .inner-text {
             padding: 120px 20px;
-            h2 {
-            font-size: 52px;
-            }
-            p {
-            font-size: 2em;
-        }
+
     }
 
     .column-2 img {

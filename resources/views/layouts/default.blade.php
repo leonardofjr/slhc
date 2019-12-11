@@ -1,7 +1,8 @@
 <!DOCTYPE html><?php $url = URL::to("/");?>
 <html>
     <head>
-        <title>@yield('title')</title>
+        <title>@yield('title') </title>
+        <meta name="description" content="@yield('meta-description-content')"/>
         @include('layouts.partials.head')
     </head>
     <body>

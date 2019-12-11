@@ -1,5 +1,8 @@
 @extends('layouts.default')
-@section('title', 'Who are we - Sacred Light Healing Centre')
+
+@section('title', 'Alternative Medicine - Markham, Stouffville')
+@section('meta-description-content', 'Our practice revolves around the ancient healing arts of traditional healing.')
+
 @section('content')
 <div class="container">
     <div class="row mb-5">

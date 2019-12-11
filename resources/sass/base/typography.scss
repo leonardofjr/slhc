@@ -1,6 +1,7 @@
 body {
-font-family: $font-stack!important;
-font-weight: 300;
+  font-weight: 300;
+  font-family: $font-stack!important;
+
 }
 
 main ul {
@@ -27,35 +28,42 @@ p {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2em;
+  @include breakpoint(md) {
+      font-size: 3em;
+  }
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 1.8em;
+  @include breakpoint(md) {
+      font-size: 2.4em;
+  }
 }
 
 h3 {
-font-size: 2.2em;
-}
-
-h4 {
-  font-size: 1.8em;
-}
-h5 {
   font-size: 1.6em;
+  @include breakpoint(md) {
+      font-size: 2.2em;
+  }
 }
-h6 {
+h4 {
+  font-size: 1.4em;
+  @include breakpoint(md) {
+      font-size: 1.4em;
+  }
+}
+
+h5 {
   font-size: 1.3em;
-}
-
-
-header {
-  .main-heading {
-    font-weight: 100;
-    font-size: 3em;
-  }
-  .main-heading span {
-    font-weight: 900;
+  @include breakpoint(md) {
+      font-size: 1.3em;
   }
 }
 
+h6 {
+  font-size: 1.2em;
+  @include breakpoint(md) {
+      font-size: 1.2em;
+  }
+}

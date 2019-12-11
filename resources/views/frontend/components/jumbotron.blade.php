@@ -3,9 +3,7 @@
 
     @if (\Request::is('/'))
       <div class="home-cover"></div>
-        <span>
-          We have a <strong>moral obligation</strong> to help others
-        </span>
+        <h1 class="main-heading">ALTERNATIVE MEDICINE IN MARKHAM</h1>
     @endif
 
     @if (\Request::is('treatments') || \Request::is('treatments/*'))

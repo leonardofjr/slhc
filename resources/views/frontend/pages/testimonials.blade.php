@@ -1,6 +1,7 @@
 @extends('layouts.default')
 
-@section('title', 'Testimonials - Sacred Light Healing Centre')
+@section('title', 'Alternative Medicine - Markham, Stouffville')
+@section('meta-description-content', 'Our practice revolves around the ancient healing arts of traditional healing.')
 
 @section('content')
 
