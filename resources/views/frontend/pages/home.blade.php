@@ -58,6 +58,7 @@ Stay in control of your health!<br><a href="/book-now"  ><button class="btn btn-
 
 
 <section class="container-fluid row-3">
+    <h2 class="text-center my-5">TREATMENTS</h2>
     @include('frontend.components.flip-cards')
     <div class="d-flex justify-content-center">
         <a href="/treatments"><button class="btn btn-primary">VIEW ALL TREATMENTS</button></a>
@@ -65,29 +66,26 @@ Stay in control of your health!<br><a href="/book-now"  ><button class="btn btn-
 </section>
 
 
-<!--
-<div class="container row-5">
-        <div class="row">
-            <div class="col-12 col-md-6 column-1">
-                <div class="card card-shadow">
-                       
-                            <div class="inner-text">
-                                 <h2>Let’s Detoxify Your Lungs Naturally</h2>
-                                 <p>Lung Cleanse for smokers and non smokers Traditional herbal remedy to cleansing your lungs have been found in this list of herbs below:   1. Oregano Histamine reducing herbs like oregano aid in counteracting histamine and may help reduce these reactions. When pollen,... <br><a href="#">read more</a></p>
-                               
+
+
+<section class="container">
+    <h2 class="text-center my-5">TESTIMONIALS</h2>
+    <div class="row">
+        @if($reviews)
+            @foreach ($reviews as $key => $review )
+                    @if ($review->verified)
+                        <div class="testimonial col-md-4 p-2">
+                            <div class="p-3 border">
+                                <p class="content font-italic  text-center">{{$review->review}}</p>
+                                <p class="name py-0 my-0 font-weight-bold text-center">{{$review->fname}} {{$review->lname}}</p>
+
                             </div>
-                            <a href="/blog"><button class="btn btn-primary">VIEW OUR BLOG</button></a>
-                 
-                </div>
-            </div>
-            <div class="col-12 col-md-6 column-2">
-                   <div class="image">
-                        <span class="img-wrap">
-                            <img src="assets/gif/cordyceps-sinesis.gif" alt="">
-                        </span>
-                    </div>
-            </div>
-        </div>
-</div>
--->
+                            
+                        </div>
+                    @endif
+            @endforeach
+        @endif
+    </div>
+</section>
 @endsection
+

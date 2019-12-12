@@ -1,8 +1,16 @@
 .lf-line {
-  background-color: white; width: 20%;
+  background-color: white; width: 10%;
 }
 .card-container h2, .card-container p {
-    color: #fff!important;
+    color: #fff;
+}
+.chinese_name {
+  color: #fff;
+}
+.price {
+  color: #fff!important;
+  font-size: 1.3em;
+  font-weight: 800;
 }
 .card-container .front h2 {
     text-align: center;
@@ -49,7 +57,7 @@
 
 .card-container:nth-child(1) .flip-container .front {
   background-image: url("/assets/png/acupressure.png");
-    background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-size: cover; 
 }
 

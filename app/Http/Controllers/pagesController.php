@@ -10,10 +10,12 @@
     use Storage;  
     use Route;  
     use App\Review;
+    
     class PagesController extends Controller {
         public function getHomepage() {
-       
-            return view('frontend.pages.home');
+            $reviews = Review::all();
+            $data = Service::all();
+            return view('frontend.pages.home')->withReviews($reviews)->withData($data);
         } // getHomepage() Ends Here
 
          public function getWhoAreWePage() {

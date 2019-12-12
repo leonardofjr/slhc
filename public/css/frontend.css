@@ -486,12 +486,22 @@ body {
 
 .lf-line {
   background-color: white;
-  width: 20%;
+  width: 10%;
 }
 
 .card-container h2,
 .card-container p {
+  color: #fff;
+}
+
+.chinese_name {
+  color: #fff;
+}
+
+.price {
   color: #fff !important;
+  font-size: 1.3em;
+  font-weight: 800;
 }
 
 .card-container .front h2 {
