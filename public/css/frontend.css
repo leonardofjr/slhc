@@ -673,16 +673,18 @@ body {
   color: #000;
 }
 
-@media (min-width: 992px) {
-  .navbar .navbar-nav .book_now {
-    background-color: #f16522;
-    border-radius: 10px;
-  }
+.navbar .navbar-nav .book_now a {
+  color: #fff;
+}
 
-  .navbar .navbar-nav .book_now:hover {
-    background-color: rgba(241, 101, 34, 0.8);
-    border-radius: 10px;
-  }
+.navbar .navbar-nav .book_now {
+  background-color: #f16522;
+  border-radius: 10px;
+}
+
+.navbar .navbar-nav .book_now:hover {
+  background-color: rgba(241, 101, 34, 0.8);
+  border-radius: 10px;
 }
 
 .sub-menu {

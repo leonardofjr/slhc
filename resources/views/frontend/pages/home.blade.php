@@ -32,6 +32,18 @@
         </div>
     </section>
 -->
+
+
+
+<section class="container-fluid row-3">
+    <h2 class="text-center my-5">TREATMENTS</h2>
+    @include('frontend.components.flip-cards')
+    <div class="d-flex justify-content-center">
+        <a href="/treatments"><button class="btn btn-primary">VIEW ALL TREATMENTS</button></a>
+    </div>    
+</section>
+
+
 <section class="container-fluid row-2">
         <div class="row">
             <div class="col-12 col-md-8 column-1">
@@ -54,18 +66,6 @@ Stay in control of your health!<br><a href="/book-now"  ><button class="btn btn-
             </div>
         </div>
 </section>
-
-
-
-<section class="container-fluid row-3">
-    <h2 class="text-center my-5">TREATMENTS</h2>
-    @include('frontend.components.flip-cards')
-    <div class="d-flex justify-content-center">
-        <a href="/treatments"><button class="btn btn-primary">VIEW ALL TREATMENTS</button></a>
-    </div>    
-</section>
-
-
 
 
 <section class="container">
