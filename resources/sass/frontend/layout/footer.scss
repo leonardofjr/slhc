@@ -1,5 +1,5 @@
 footer {
-  background: $footer-color;
+  background: $primary-color;
   color: #fff;
   a {
     color: rgba(255, 255, 255, .8);
@@ -11,11 +11,6 @@ footer {
     list-style: none;
     margin-left: 20px;
   }
-    svg {
-        max-width: 250px;
-    }
-
-  margin-top: 3em;
 }
 
 .site-info {

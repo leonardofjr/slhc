@@ -730,9 +730,8 @@ main .page-title {
 }
 
 footer {
-  background: #000;
+  background: #f16522;
   color: #fff;
-  margin-top: 3em;
 }
 
 footer a {
@@ -746,10 +745,6 @@ footer a:hover {
 footer ul {
   list-style: none;
   margin-left: 20px;
-}
-
-footer svg {
-  max-width: 250px;
 }
 
 .site-info {
@@ -790,7 +785,7 @@ footer svg {
   }
 
   .row-2 .column-1 .inner-text {
-    max-width: 1000px;
+    max-width: 95%;
   }
 
   .row-2 .column-2 img {
