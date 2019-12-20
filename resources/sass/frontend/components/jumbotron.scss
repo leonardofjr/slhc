@@ -1,26 +1,4 @@
 .jumbotron {
-    margin: 0!important;
-    padding: 0!important; 
-    background-color: $primary-color;
-    height: 90vh;
-
-    .main-heading {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #fff;
-        text-align: center;
-        display: block;
-    }
-
-    div:nth-child(1) {
-        background-size: cover;
-        height: 100%;
-        background-position: center;
-      
-    }
-
 
  
         .home-cover {

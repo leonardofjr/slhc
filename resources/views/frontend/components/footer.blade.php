@@ -18,7 +18,7 @@
             </div>
             <div class="mt-4">
                 <a href="{{$facebook}}">
-                    <img src="{{asset('assets/png/facebook-profile-image.png')}}" class="img-fluid" alt="">
+                    <img src="{{asset('imgs/facebook-profile-image.png')}}" class="img-fluid" alt="">
                 </a>
             </div>
 

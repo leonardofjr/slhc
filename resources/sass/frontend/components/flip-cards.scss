@@ -48,7 +48,7 @@
 
 .flipper .back {
   background: rgb(241, 101, 34);
-  background-image: url("/assets/png/yin-yang-bg.png");
+  background-image: url("/imgs/yin-yang-bg.png");
   background-position: center;
 }
 
@@ -56,25 +56,25 @@
 
 
 .card-container:nth-child(1) .flip-container .front {
-  background-image: url("/assets/png/acupressure.png");
+  background-image: url("/imgs/acupressure.png");
   background-repeat: no-repeat;
   background-size: cover; 
 }
 
 .card-container:nth-child(2) .flip-container .front {
-  background-image: url("/assets/png/massage.png");
+  background-image: url("/imgs/massage.png");
     background-repeat: no-repeat;
   background-size: cover; 
 }
 
 .card-container:nth-child(3) .flip-container .front {
-  background-image: url("/assets/png/herbal-medicine.png");
+  background-image: url("/imgs/herbal-medicine.png");
     background-repeat: no-repeat;
   background-size: cover; 
 }
 
 .card-container:nth-child(4) .flip-container .front {
-  background-image: url("/assets/png/reiki.png");
+  background-image: url("/imgs/reiki.png");
     background-repeat: no-repeat;
   background-size: cover; 
 }

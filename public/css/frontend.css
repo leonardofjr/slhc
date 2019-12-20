@@ -257,35 +257,19 @@ h6 {
 }
 
 .btn-secondary {
-  background-color: #FFBF2D !important;
+  background-color: #ffbf2d !important;
   color: white !important;
-  padding: 5px 10px !important;
+  font-size: 2em;
+  padding: 0.9em !important;
   border: none !important;
+  border-radius: 25px;
   cursor: pointer !important;
 }
 
-.jumbotron {
-  margin: 0 !important;
-  padding: 0 !important;
-  background-color: #f16522;
-  height: 90vh;
-}
-
-.jumbotron .main-heading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  color: #fff;
-  text-align: center;
-  display: block;
-}
-
-.jumbotron div:nth-child(1) {
-  background-size: cover;
-  height: 100%;
-  background-position: center;
+.btn-secondary:hover {
+  color: white !important;
+  cursor: pointer !important;
+  background-color: rgba(255, 191, 45, 0.8) !important;
 }
 
 .jumbotron .home-cover {
@@ -552,32 +536,32 @@ body {
 
 .flipper .back {
   background: #f16522;
-  background-image: url("/assets/png/yin-yang-bg.png");
+  background-image: url("/imgs/yin-yang-bg.png");
   background-position: center;
 }
 
 /* Set Images */
 
 .card-container:nth-child(1) .flip-container .front {
-  background-image: url("/assets/png/acupressure.png");
+  background-image: url("/imgs/acupressure.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .card-container:nth-child(2) .flip-container .front {
-  background-image: url("/assets/png/massage.png");
+  background-image: url("/imgs/massage.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .card-container:nth-child(3) .flip-container .front {
-  background-image: url("/assets/png/herbal-medicine.png");
+  background-image: url("/imgs/herbal-medicine.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .card-container:nth-child(4) .flip-container .front {
-  background-image: url("/assets/png/reiki.png");
+  background-image: url("/imgs/reiki.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -673,7 +657,7 @@ body {
 }
 
 .navbar {
-  background: rgba(0, 0, 0, 0.9) !important;
+  background: white !important;
   z-index: 10000;
 }
 
@@ -686,7 +670,7 @@ body {
 }
 
 .navbar .navbar-nav .item a {
-  color: #fff;
+  color: #000;
 }
 
 @media (min-width: 992px) {
@@ -787,7 +771,7 @@ footer svg {
 
 .row-2 .column-1 {
   z-index: 1000;
-  background-image: url("/assets/png/chinese-pattern.png");
+  background-image: url("/imgs/chinese-pattern.png");
 }
 
 .row-2 .column-1 .inner-text {

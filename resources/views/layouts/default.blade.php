@@ -8,7 +8,20 @@
     <body>
         <header>
                 @include('frontend.components.navigation')
-                @include('frontend.components.jumbotron')
+                @include('frontend.components.slideshow')
+                <div class="container-fluid primary-bg-color">
+                    <div class="container">
+                        <div class="row py-3">
+                            <div class="col-md-9">
+                                <h2 class="text-uppercase">HOW CAN WE HELP?</h2>
+                                <p>For thousands of years our ancestors worked with various types of healing modalities in order to achieve balance whether it’s was through balancing chakras or Qi ‘ a universal energy that circulates through our body and the universe, which Is still commonly practiced among many cultures today. According to ancient theories of Chinese medicine the flow of qi must always flow freely to maintain a healthy life harmoniously to help achieve longevity. Therefore it is important to take the time to help yourself maintain a balanced lifestyle. </p>
+                            </div>
+                            <div class="col-md-3 d-flex align-items-center justify-content-center m-5 m-md-0">
+                                <button class="btn btn-secondary">BOOK NOW</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </header>
         <main>
             @if (!\Request::is('/'))
