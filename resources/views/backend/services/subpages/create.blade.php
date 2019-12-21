@@ -2,6 +2,25 @@
 
 @section('content')
     <h2>{{\Request::route()->getName()}}</h2>
+    <div id="uploadImageModal" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="upload-demo"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
+        </div>
     <form action="/services" method="POST">
         {{ csrf_field() }}
 
@@ -14,6 +33,17 @@
                         <strong>{{ $errors->first('service_name') }}</strong>
                     </span>
                  @endif
+            </div>
+        </div>
+
+      
+
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="service_image_file">Image</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control {{ $errors->has('service_image_file') ? ' is-invalid' : '' }}" id="service_image_file" name="service_image_file" >
+
             </div>
         </div>
 
