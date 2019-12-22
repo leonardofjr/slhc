@@ -30,12 +30,10 @@ $('#service_image_file').on('change', function() {
     // Crop & Upload Image
 
     $('.crop-upload-image').on('click', function(event) {
-        console.log(event);
         $uploadCrop.croppie('result', {
             type: 'canvas',
             size: 'viewport',
         }).then(function(response) {
-            console.log(response);
             $.ajax({
                 url: 'services',
                 type: 'POST',
@@ -45,6 +43,8 @@ $('#service_image_file').on('change', function() {
                 },
                 success: function (data) { 
                     $('#uploadImageModal').modal('hide');
+                    console.log(data);
+                    $('.service_image_preview').attr('src', data.image_destination);
                     console.log('success');
                 },
                 error: function (jqXHR, textStatus, errorThrown) {

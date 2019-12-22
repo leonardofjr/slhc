@@ -42,7 +42,7 @@
             <label class="col-sm-2 col-form-label" for="service_image_file">Image</label>
             <div class="col-sm-10">
                 <input type="file" class="form-control {{ $errors->has('service_image_file') ? ' is-invalid' : '' }}" id="service_image_file" name="service_image_file" >
-
+                <img class="service_image_preview my-3" src="" alt="Preview of image">
             </div>
         </div>
 

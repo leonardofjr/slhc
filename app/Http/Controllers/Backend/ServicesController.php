@@ -7,8 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Service;
 use App\DurationDropdown;
 use Illuminate\Http\UploadedFile;
-
 use Illuminate\Support\Facades\Storage;
+
 
 class ServicesController extends Controller
 {
@@ -46,13 +46,19 @@ class ServicesController extends Controller
     public function store(Request $request)
     {
         $encoded_image = $request->input('image');
-        // Preparing to decode base64 image file 
+        $temp_directory = 'temp/';
+        $img_name = time() . '.png';
+        // Preparing to decode base64 image file
         $img_array = explode(';', $encoded_image);
         $img_array_2 = explode(',', $img_array[1]);
+        Storage::disk('public')->deleteDirectory($temp_directory);
+        Storage::disk('public')->put($temp_directory . $img_name, base64_decode($img_array_2[1]));
+        return response()->json(["image_destination" => 'storage/'. $temp_directory . $img_name]);
 
-        Storage::put('file' . '.png', base64_decode($img_array_2[1]));
+        
 
-        return response()->json($img_array_2);
+
+
 
 
         // Validating Request
