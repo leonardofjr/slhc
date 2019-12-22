@@ -27,4 +27,30 @@ $('#service_image_file').on('change', function() {
     // Display Modal
     $('#uploadImageModal').modal('show');
 
+    // Crop & Upload Image
+
+    $('.crop-upload-image').on('click', function(event) {
+        console.log(event);
+        $uploadCrop.croppie('result', {
+            type: 'canvas',
+            size: 'viewport',
+        }).then(function(response) {
+            console.log(response);
+            $.ajax({
+                url: 'services',
+                type: 'POST',
+                data: {
+                    "image" : response,
+                    "_token" : $('input[name="_token"').val()
+                },
+                success: function (data) { 
+                    $('#uploadImageModal').modal('hide');
+                    console.log('success');
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR);
+                }
+            });
+        })
+    });
 });

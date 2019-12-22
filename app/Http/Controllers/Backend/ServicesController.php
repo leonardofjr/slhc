@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Service;
 use App\DurationDropdown;
+use Illuminate\Http\UploadedFile;
+
+use Illuminate\Support\Facades\Storage;
 
 class ServicesController extends Controller
 {
@@ -42,7 +45,18 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
+        $encoded_image = $request->input('image');
+        // Preparing to decode base64 image file 
+        $img_array = explode(';', $encoded_image);
+        $img_array_2 = explode(',', $img_array[1]);
+
+        Storage::put('file' . '.png', base64_decode($img_array_2[1]));
+
+        return response()->json($img_array_2);
+
+
         // Validating Request
+    /*
         $validatedData = $request->validate([
             'service_name' => 'required',
             'service_duration' =>'required',
@@ -59,8 +73,9 @@ class ServicesController extends Controller
         $service->short_description =  $request->short_description;
         $service->detailed_description =  $request->detailed_description;
 
-        $service->save();
-        return redirect('/services');    }
+        $service->save(); 
+        return redirect('/services');   */
+     }
 
     /**
      * Display the specified resource.
