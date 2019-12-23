@@ -19,14 +19,13 @@
         } // getHomepage() Ends Here
 
          public function getWhoAreWePage() {
-            $data = [];
-
-            return view('frontend.pages.who-are-we');
+            $services = Service::all();
+            return view('frontend.pages.who-are-we')->withServices($services);
          } // getWhoAreWePage() Ends Here
 
          public function getTreatmentsPage() {
             $services = Service::all();
-            return view('frontend.pages.treatments')->withServices( $services);
+            return view('frontend.pages.treatments')->withServices($services);
          }  // getTreatmentsPage() Ends Here
 
 
