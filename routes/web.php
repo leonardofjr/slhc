@@ -90,6 +90,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/services/{id}', 'Backend\ServicesController@edit')->name('Edit Service')->middleware('verified');
     Route::get('/post_service', 'Backend\ServicesController@create')->name('Post Service')->middleware('verified');
     Route::post('/services', 'Backend\ServicesController@store');
+    Route::post('/services/upload_image', 'Backend\ServicesController@uploadImage');
     Route::put('/services/{id}', 'Backend\ServicesController@update');
     Route::delete('/services/{id}', 'Backend\ServicesController@destroy')->name('Delete');
 

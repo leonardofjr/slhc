@@ -17,6 +17,9 @@ class ServicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $temp_directory = 'temp/';
+
+
     public function index()
     {
         $data = Service::all();
@@ -45,42 +48,50 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        $encoded_image = $request->input('image');
-        $temp_directory = 'temp/';
-        $img_name = time() . '.png';
-        // Preparing to decode base64 image file
-        $img_array = explode(';', $encoded_image);
-        $img_array_2 = explode(',', $img_array[1]);
-        Storage::disk('public')->deleteDirectory($temp_directory);
-        Storage::disk('public')->put($temp_directory . $img_name, base64_decode($img_array_2[1]));
-        return response()->json(["image_destination" => 'storage/'. $temp_directory . $img_name]);
-
-        
-
-
-
 
 
         // Validating Request
-    /*
         $validatedData = $request->validate([
             'service_name' => 'required',
             'service_duration' =>'required',
+            'service_image_file' =>'required',
             'service_price' =>'required',
             'short_description' =>'required',
             'detailed_description' =>'required',
         ]);
 
+        $image_file = 'png/' . $request->service_name . '.png';
+
         $service = new Service();
         $service->service_name =  $request->service_name;
         $service->slug =  str_replace(' ','_',strtolower($request->service_name));
+        $service->image = $image_file;
         $service->duration =  $request->service_duration;
         $service->service_price =  $request->service_price;
         $service->short_description =  $request->short_description;
         $service->detailed_description =  $request->detailed_description;
-
+        // Handle Image 
+        $temp_file_location = Storage::disk('public')->allFiles('temp/')[0];
+        $copy_file = Storage::disk('public')->copy($temp_file_location, $image_file);
+        // Saving 
         $service->save(); 
-        return redirect('/services');   */
+        return redirect('/services');  
+     }
+
+     public function uploadImage(Request $request) 
+     {
+        $encoded_image = $request->input('image');
+        $img_name = time() . '.png';
+        // Preparing to decode base64 image file
+        $img_array = explode(';', $encoded_image);
+        $img_array_2 = explode(',', $img_array[1]);
+        $this->deleteTempDirectory();
+        Storage::disk('public')->put($this->temp_directory . $img_name, base64_decode($img_array_2[1]));
+        return response()->json(["image_destination" => '/storage/'. $this->temp_directory . $img_name]);
+     }
+     public function deleteTempDirectory() {
+        Storage::disk('public')->deleteDirectory($this->temp_directory);
+
      }
 
     /**
@@ -102,8 +113,9 @@ class ServicesController extends Controller
      */
     public function edit($id, Request $request)
     {
+        $duration_dropdown = DurationDropdown::all();
         $data = Service::findOrFail($id);
-        return view('backend.services.subpages.edit')->withData($data);
+        return view('backend.services.subpages.edit')->withData($data)->withDurationDropdown($duration_dropdown);
     }
 
     /**
@@ -123,7 +135,7 @@ class ServicesController extends Controller
             'short_description' =>'required',
             'detailed_description' =>'required',
         ]);
-
+        $image_file = 'png/' . $request->service_name . '.png';
         $service = Service::findOrFail($id);
         $service->service_name =  $request->service_name;
         $service->slug =  str_replace(' ','_',strtolower($request->service_name)) ;
@@ -131,7 +143,16 @@ class ServicesController extends Controller
         $service->service_price =  $request->service_price;
         $service->short_description =  $request->short_description;
         $service->detailed_description =  $request->detailed_description;
+        // Handle Image 
+        if (Storage::disk('public')->exists($image_file)) {
+            Storage::disk('public')->delete($image_file);
+        }
+        Storage::disk('public')->delete($service->image);
+        $service->image = $image_file;
+        $temp_file_location = Storage::disk('public')->allFiles('temp/')[0];
+        $copy_file = Storage::disk('public')->copy($temp_file_location, $image_file);
         $service->save();
+             $this->deleteTempDirectory();
         return redirect('/services');
     }
 
@@ -144,6 +165,7 @@ class ServicesController extends Controller
     public function destroy($id)
     {
         $service = Service::findOrFail($id);
+        Storage::disk('public')->delete($service->image);
         $service->delete();
         return redirect('/services');
 

@@ -3,6 +3,24 @@
 
 @section('content')
     <h2>{{\Request::route()->getName()}}</h2>
+    <div id="uploadImageModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="upload-demo"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary crop-upload-image">Crop & Upload Image</button>
+            </div>
+            </div>
+        </div>
+    </div>
     <form action="/services/{{$data->id}}" method="POST">
         {{ csrf_field() }}
         <input type="hidden" name="_method" value="put" />
@@ -18,14 +36,38 @@
             </div>
         </div>
 
+        
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="service_image_file">Image</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control {{ $errors->has('service_image_file') ? ' is-invalid' : '' }}" id="service_image_file" name="service_image_file" >
+                @if ($errors->has('service_image_file'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('service_image_file') }}</strong>
+                </span>
+             @endif
+             <img class="service_image_preview my-3" src="{{asset('storage/' . $data->image) }}" alt="Preview of image">
+            </div>
+        </div>
+
+        
         <div class="form-group row">
             <label class="col-sm-2 col-form-label" for="service_duration">Duration</label>
             <div class="col-sm-4">
                 <select type="dropdown" class="form-control {{ $errors->has('service_duration') ? ' is-invalid' : '' }}" id="service_duration" name="service_duration"  placeholder="Hour">
-                    <option value="" selected> Choose...</option>
-                    <option value="15" {{ old('service_duration') == "15"  ? "selected" : "" }}>15min</option>
-                    <option value="30" {{ old('service_duration') == "30"  ? "selected" : "" }}>30min</option>
-                    <option value="60" {{ old('service_duration') == "60"  ? "selected" : "" }}>60min</option>
+                    @if ($data->duration)
+                        
+                    @endif
+                    <option value=""> Choose...</option>
+                    @foreach ($durationDropdown as $durationDropdownItem )
+                        @if ($durationDropdownItem["duration"] === $data->duration)
+                        
+                              <option value="{{$durationDropdownItem["duration"]}}" {{ old('service_duration') == $durationDropdownItem["duration"]  ? "selected" : "" }} selected >{{gmdate("H:i:s",$durationDropdownItem["duration"])}}</option>
+                        @else
+                             <option value="{{$durationDropdownItem["duration"]}}" {{ old('service_duration') == $durationDropdownItem["duration"]  ? "selected" : "" }}>{{gmdate("H:i:s",$durationDropdownItem["duration"])}}</option>
+                        @endif
+                         
+                    @endforeach
                 </select>
                 @if ($errors->has('service_duration'))
                     <span class="invalid-feedback" role="alert">

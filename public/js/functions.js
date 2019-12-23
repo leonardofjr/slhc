@@ -35,7 +35,7 @@ $('#service_image_file').on('change', function() {
             size: 'viewport',
         }).then(function(response) {
             $.ajax({
-                url: 'services',
+                url: '/services/upload_image',
                 type: 'POST',
                 data: {
                     "image" : response,
