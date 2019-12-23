@@ -4,8 +4,9 @@
 <div class="card-header">
     <h2>{{\Request::route()->getName()}}</h2>
 </div>
+<div class="p-4">
 <hr>
-<h3>Company Profile</h3>
+<h5>Company Profile</h5>
 <hr>
 <form action="/settings" method="POST">    
         {{ csrf_field()}}
@@ -124,7 +125,7 @@
 
         <div class="my-4">
         <hr>
-        <h3>Hours of Operation</h2>
+        <h5>Hours of Operation</h2>
         <table class="table">
         <tr>
             <th>Day</th>
@@ -142,5 +143,6 @@
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
 </form>
+</div>
 @endsection
     

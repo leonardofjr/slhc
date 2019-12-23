@@ -6,7 +6,7 @@
                 <h2>{{\Request::route()->getName()}}</h2><a class="btn btn-primary float-right" href="{{route("Post Service")}}">Add Service</a>
         </div>
 
-        <div class="card-body">
+        <div class="card-body p-4">
 
                 <table class="table">
                 <thead>

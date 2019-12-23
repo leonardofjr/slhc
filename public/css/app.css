@@ -35,7 +35,7 @@ body {
 }
 
 .admin-cpanel .content {
-  height: 100%;
+  height: calc(100% - 118px);
   overflow: auto;
   vertical-align: top;
 }

@@ -6,34 +6,3 @@
     background: $secondary-color;
 }
 
-
-html, body  {
-    height: 100%;
-    overflow:hidden;
-}
-
-.admin-cpanel {
-    height: 100%;
-    .row {
-        height: 100%;
-    }
-    aside {
-        height: 100%;
-        background-color: #000;
-        overflow: auto;
-        vertical-align: top;
-        display: inline-block;
-
-        a {
-            color: #fff;
-        }
-    }
-    .content {
-        height: 100%;
-        overflow: auto;
-        vertical-align: top;
-
-    }
-}
-
-

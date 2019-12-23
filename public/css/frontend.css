@@ -844,35 +844,3 @@ footer ul {
   background: #ffbf2d;
 }
 
-html,
-body {
-  height: 100%;
-  overflow: hidden;
-}
-
-.admin-cpanel {
-  height: 100%;
-}
-
-.admin-cpanel .row {
-  height: 100%;
-}
-
-.admin-cpanel aside {
-  height: 100%;
-  background-color: #000;
-  overflow: auto;
-  vertical-align: top;
-  display: inline-block;
-}
-
-.admin-cpanel aside a {
-  color: #fff;
-}
-
-.admin-cpanel .content {
-  height: 100%;
-  overflow: auto;
-  vertical-align: top;
-}
-

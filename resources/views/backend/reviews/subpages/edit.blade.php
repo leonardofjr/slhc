@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2>{{\Request::route()->getName()}}</h2>
-<form action="/reviews/{{$data->id}}" method="POST">    
+    <div class="card-header">
+        <h2>{{\Request::route()->getName()}}</h2>
+    </div>
+    <form class="p-4" action="/reviews/{{$data->id}}" method="POST">    
         <input type="hidden" name="_method" value="put" />
         {{ csrf_field() }}
         <div class="form-group row">

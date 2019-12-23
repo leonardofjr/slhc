@@ -27,7 +27,7 @@
 <body>
     <header class="container-fluid">
         <nav class="navbar navbar-expand-md navbar-light">
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="navbar-brand" href="{{ route('Dashboard') }}">
                 <img class="img-fluid" src="{{asset('imgs/sacred-light-healing-centre-logo.png')}}" alt="Sacred Light Healing Centre Logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

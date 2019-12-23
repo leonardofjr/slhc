@@ -2,7 +2,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2>{{\Request::route()->getName()}}</h2>
+    <div class="card-header">
+        <h2>{{\Request::route()->getName()}}</h2>
+    </div>    
     <div id="uploadImageModal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -21,7 +23,7 @@
             </div>
         </div>
     </div>
-    <form action="/services/{{$data->id}}" method="POST">
+    <form class="p-4" action="/services/{{$data->id}}" method="POST">
         {{ csrf_field() }}
         <input type="hidden" name="_method" value="put" />
         <div class="form-group row">

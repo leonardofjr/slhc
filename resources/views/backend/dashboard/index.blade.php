@@ -11,6 +11,7 @@
                         <h2>{{\Request::route()->getName()}}</h2>
                     </div>
 
-
-                    You are logged in!
+                    <div class="p-4">
+                        You are logged in!
+                    </div>
 @endsection
