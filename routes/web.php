@@ -20,8 +20,7 @@ Route::get('/', ['as' => 'Home', 'uses' => 'PagesController@getHomepage']);
 // ** Who We Are ** //
 Route::get('/who-are-we',  ['as' => 'Who Are We', 'uses' => 'PagesController@getWhoAreWePage']);
 // ** Treatments ** //
-Route::get('/treatments',  ['as' => 'Treatments', 'uses' => 'PagesController@getTreatmentsPage']);
-Route::get('/treatments/{any}', 'PagesController@getTreatmentsPage')->name(' Treatments ')->where('any', '.*');
+Route::get('/treatments',  ['as' => 'Treatments', 'uses' => 'Frontend\ServicePageController@index']);
 
 
 // ** Testimonials ** //
