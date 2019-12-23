@@ -468,6 +468,169 @@ body {
   display: none;
 }
 
+.lf-line {
+  background-color: white;
+  width: 10%;
+}
+
+.card-container h2,
+.card-container p {
+  color: #fff;
+}
+
+.chinese_name {
+  color: #fff;
+}
+
+.price {
+  color: #fff !important;
+  font-size: 1.3em;
+  font-weight: 800;
+}
+
+.card-container .front h2 {
+  text-align: center;
+}
+
+.card-container {
+  padding: 0;
+}
+
+.plus-sign {
+  font-size: 4em;
+  position: absolute;
+  color: white;
+  left: 50%;
+  top: 80%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.flip-container {
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+/*  UPDATED! flip the pane when hovered */
+
+.flip-container:hover .back {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+.flip-container:hover .front {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+/* adjust card width and height */
+
+.flip-container,
+.front,
+.back {
+  height: 400px;
+  width: 100%;
+}
+
+.flipper .back {
+  background: #f16522;
+  background-image: url("/imgs/yin-yang-bg.png");
+  background-position: center;
+}
+
+/* Set Images */
+
+.card-container .flip-container .front {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Front Content */
+
+.front .content {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  width: 85%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/* Back Content */
+
+.back .content {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  width: 85%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/* flip speed goes here */
+
+.flipper {
+  transition: 1s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: relative;
+}
+
+/* hide back of pane during swap */
+
+.front,
+.back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: 1s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+
+.back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+/*	Some vertical flip updates */
+
+.vertical.flip-container {
+  position: relative;
+}
+
+.vertical .back {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+.vertical.flip-container:hover .back {
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+}
+
+.vertical.flip-container:hover .front {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
 #map {
   width: 100%;
   background-color: grey;
