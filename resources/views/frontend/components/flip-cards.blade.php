@@ -16,7 +16,7 @@
                     <div class="back text-center">
                         <div class="content">
                             <h2>{{$service_item->service_chinese_name}} <br> <hr class="lf-line">{{$service_item->service_name}}</h2>
-                            <p>{{$service_item->short_description}}</p>
+                            <p>{!!$service_item->short_description!!}</p>
                             <a href="/treatments/{{$service_item->slug}}">Read more</a>
                         </div>
                     </div>
