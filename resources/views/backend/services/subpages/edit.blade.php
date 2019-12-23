@@ -38,6 +38,18 @@
 
         
         <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="service_chinese_name">Chinese name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control {{ $errors->has('service_chinese_name') ? ' is-invalid' : '' }}" id="service_chinese_name" name="service_chinese_name"  value="{{ old('service_name', $data->service_chinese_name) }}"   placeholder="Enter the chinese name for the service">
+                 @if ($errors->has('service_chinese_name'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('service_chinese_name') }}</strong>
+                    </span>
+                 @endif
+            </div>
+        </div>
+
+        <div class="form-group row">
             <label class="col-sm-2 col-form-label" for="service_image_file">Image</label>
             <div class="col-sm-10">
                 <input type="file" class="form-control {{ $errors->has('service_image_file') ? ' is-invalid' : '' }}" id="service_image_file" name="service_image_file" >

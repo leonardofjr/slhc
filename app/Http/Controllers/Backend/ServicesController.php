@@ -53,6 +53,7 @@ class ServicesController extends Controller
         // Validating Request
         $validatedData = $request->validate([
             'service_name' => 'required',
+            'service_chinese_name' => 'required',
             'service_duration' =>'required',
             'service_image_file' =>'required',
             'service_price' =>'required',
@@ -60,10 +61,11 @@ class ServicesController extends Controller
             'detailed_description' =>'required',
         ]);
 
-        $image_file = 'png/' . $request->service_name . '.png';
+        $image_file = 'png/' . str_replace(' ', '_', $request->service_name) . '.png';
 
         $service = new Service();
         $service->service_name =  $request->service_name;
+        $service->service_chinese_name =  $request->service_chinese_name;
         $service->slug =  str_replace(' ','_',strtolower($request->service_name));
         $service->image = $image_file;
         $service->duration =  $request->service_duration;
@@ -130,14 +132,16 @@ class ServicesController extends Controller
         // Validating Request
         $validatedData = $request->validate([
             'service_name' => 'required',
+            'service_chinese_name' => 'required',
             'service_duration' =>'required',
             'service_price' =>'required',
             'short_description' =>'required',
             'detailed_description' =>'required',
         ]);
-        $image_file = 'png/' . $request->service_name . '.png';
+        $image_file = 'png/' . str_replace(' ', '_', $request->service_name) . '.png';
         $service = Service::findOrFail($id);
         $service->service_name =  $request->service_name;
+        $service->service_chinese_name =  $request->service_chinese_name;
         $service->slug =  str_replace(' ','_',strtolower($request->service_name)) ;
         $service->duration =  $request->service_duration;
         $service->service_price =  $request->service_price;
