@@ -14,8 +14,8 @@
     class PagesController extends Controller {
         public function getHomepage() {
             $reviews = Review::all();
-            $data = Service::all();
-            return view('frontend.pages.home')->withReviews($reviews)->withData($data);
+            $services = Service::all();
+            return view('frontend.pages.home')->withReviews($reviews)->withServices($services);
         } // getHomepage() Ends Here
 
          public function getWhoAreWePage() {
