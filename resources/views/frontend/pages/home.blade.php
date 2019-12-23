@@ -96,6 +96,9 @@ Stay in control of your health!<br><a href="/book-now"  ><button class="btn btn-
                             
                         </div>
                     @endif
+                @if ($key == 5)
+                    @break;
+                @endif
             @endforeach
         @endif
     </div>
