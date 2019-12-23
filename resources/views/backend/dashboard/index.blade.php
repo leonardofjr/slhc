@@ -7,7 +7,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h2>{{\Request::route()->getName()}}</h2>
+                    <div class="card-header">
+                        <h2>{{\Request::route()->getName()}}</h2>
+                    </div>
+
 
                     You are logged in!
 @endsection

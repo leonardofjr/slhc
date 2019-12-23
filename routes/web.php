@@ -49,7 +49,7 @@ Route::group(['middleware' => 'auth'], function () {
     Auth::routes(['verify' => true, 'register' => false]);
 
     /** Home **/
-    Route:: get('/home', 'BackendController@index')->name('Welcome');
+    Route:: get('/home', 'BackendController@index')->name('Dashboard');
 
 
     /** Users **/

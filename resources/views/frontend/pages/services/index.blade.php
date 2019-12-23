@@ -18,7 +18,12 @@
                                                         <h3 class="my-0">{{$service->service_chinese_name}}</h3>
                                                         <p> {!!$service->detailed_description!!}</p>
                                                         <div class="text-right">
-                                                                <div class="h3">${{number_format($service->service_price, 2)}}/ {{floor($service->duration / 3600  * 60 / 60)}}HR
+                                                                <div class="h3">${{number_format($service->service_price, 2)}} /
+                                                                        @if (floor($service->duration / 3600  * 60 / 60) < 1)
+                                                                          {{floor($service->duration / 3600  * 60)}}mins
+                                                                        @else
+                                                                          {{floor($service->duration / 3600  * 60 / 60)}}HR
+                                                                        @endif
                                                         </div>
                                                         <div><a href="/book-now"><button class="btn btn-primary">Book Now</button></a></div>
                                                         </div>

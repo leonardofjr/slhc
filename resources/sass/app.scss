@@ -1,5 +1,7 @@
 // Variables
-@import 'variables';
+@import './helpers/variables.scss';
+@import './helpers/mixins.scss';
+@import './themes/theme.scss';
 
 
 // Fonts

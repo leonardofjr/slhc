@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<h2>{{\Request::route()->getName()}}</h2>
+<div class="card-header">
+    <h2>{{\Request::route()->getName()}}</h2>
+</div>
 <hr>
 <h3>Company Profile</h3>
 <hr>

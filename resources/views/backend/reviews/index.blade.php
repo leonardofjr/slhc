@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-        <h2>{{\Request::route()->getName()}}</h2><a class="btn btn-primary" href="{{route("Post Review")}}">Add Review</a>
-
+        <div class="card-header">
+                <h2>{{\Request::route()->getName()}}</h2><a class="btn btn-primary float-right" href="{{route("Post Review")}}">Add Review</a>
+        </div>
         <table class="table">
         <thead>
         <tr>
