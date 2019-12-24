@@ -1,8 +1,20 @@
-.primary-bg-color {
-    background: $primary-color;
+
+.content-header {
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.secondary-bg-color {
-    background: $secondary-color;
+
+.page-title {
+    text-transform: uppercase;
+    padding: 1em 0;
 }
 
+
+.modal-dialog {
+    max-width: 800px!important;
+  }

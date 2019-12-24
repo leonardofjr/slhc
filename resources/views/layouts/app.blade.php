@@ -107,13 +107,16 @@
                 </aside>
                 @endif
                 @if(Auth::user())
-                <div class="col-9 col-sm-10 p-0 content">
-                @else
-                @endif
-                       <div class="card">
-                            @yield('content')
+                    <div class="col-9 col-sm-10 p-0 content">
+                    <div class="card">
 
-                        </div>
+                @else
+                    <div class="col-md-12">
+
+                @endif
+                        @yield('content')
+
+                    </div>
                                     
             </div>
         </main>

@@ -213,24 +213,12 @@ h6 {
   }
 }
 
-.content-header {
-  text-align: center;
-  color: #fff;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
 .primary-bg-color {
-  background-color: #f16522;
-  color: white;
+  background: #f16522;
 }
 
-.page-title {
-  text-transform: uppercase;
-  padding: 1em 0;
+.secondary-bg-color {
+  background: #ffbf2d;
 }
 
 .btn-primary {
@@ -836,11 +824,22 @@ footer ul {
   color: red;
 }
 
-.primary-bg-color {
-  background: #f16522;
+.content-header {
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
-.secondary-bg-color {
-  background: #ffbf2d;
+.page-title {
+  text-transform: uppercase;
+  padding: 1em 0;
+}
+
+.modal-dialog {
+  max-width: 800px !important;
 }
 

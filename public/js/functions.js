@@ -39,6 +39,7 @@ $('#service_image_file').on('change', function() {
                 type: 'POST',
                 data: {
                     "image" : response,
+                    "id" : $(this).attr('data-id'),
                     "_token" : $('input[name="_token"').val()
                 },
                 success: function (data) { 

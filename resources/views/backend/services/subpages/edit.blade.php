@@ -18,7 +18,7 @@
                 <div id="upload-demo"></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary crop-upload-image">Crop & Upload Image</button>
+            <button data-id="{{$data->id}}" type="button" class="btn btn-primary crop-upload-image">Crop & Upload Image</button>
             </div>
             </div>
         </div>

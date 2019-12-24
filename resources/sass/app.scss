@@ -1,23 +1,31 @@
-// Variables
+// Helpers (contains global mixins, functions, helper selectors, etc.)
+
 @import './helpers/variables.scss';
 @import './helpers/mixins.scss';
+
+
+// Base (contains global styles, such as resets, typography, colors, etc.)
+
+
+// Components (contains each self-contained component in its own .scss partial)
+
+// Layout (contains styling for larger layout components; e.g. nav, header, footer, )
+
+
+// Pages (contains page-specific styling, if necessary)
+
+// Themes (contains styling for different themes)
+
 @import './themes/theme.scss';
 @import './themes/admin-cpanel.scss';
+
+// Vendors (contains 3rd-party styles, mixins, etc.)
 
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
-
-.modal-dialog {
-  max-width: 800px!important;
-}

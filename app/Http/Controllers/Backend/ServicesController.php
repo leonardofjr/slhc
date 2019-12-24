@@ -140,6 +140,7 @@ class ServicesController extends Controller
         ]);
         $image_file = 'png/' . str_replace(' ', '_', $request->service_name) . '.png';
         $service = Service::findOrFail($id);
+        // Updating Values
         $service->service_name =  $request->service_name;
         $service->service_chinese_name =  $request->service_chinese_name;
         $service->slug =  str_replace(' ','_',strtolower($request->service_name)) ;
@@ -147,6 +148,7 @@ class ServicesController extends Controller
         $service->service_price =  $request->service_price;
         $service->short_description =  $request->short_description;
         $service->detailed_description =  $request->detailed_description;
+
         // Handle Image 
         if (Storage::disk('public')->exists($image_file)) {
             Storage::disk('public')->delete($image_file);
@@ -156,7 +158,8 @@ class ServicesController extends Controller
         $temp_file_location = Storage::disk('public')->allFiles('temp/')[0];
         $copy_file = Storage::disk('public')->copy($temp_file_location, $image_file);
         $service->save();
-             $this->deleteTempDirectory();
+        
+        $this->deleteTempDirectory();
         return redirect('/services');
     }
 

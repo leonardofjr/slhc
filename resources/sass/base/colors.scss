@@ -1,19 +1,7 @@
-.content-header {
-    text-align: center;
-    color: #fff;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .primary-bg-color {
-    background-color: $primary-color;
-    color: white;
+    background: $primary-color;
 }
 
-.page-title {
-    text-transform: uppercase;
-    padding: 1em 0;
+.secondary-bg-color {
+    background: $secondary-color;
 }
-
