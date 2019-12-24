@@ -17,7 +17,8 @@ class ServicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    private $temp_directory = 'temp/';
+    private const TEMP_DIRECTORY = 'temp/';
+    private const IMAGE_DIRECTORY = 'png/';
     private $changed_image = false;
 
 
@@ -62,8 +63,8 @@ class ServicesController extends Controller
             'detailed_description' =>'required',
         ]);
 
-        $image_file = 'png/' . str_replace(' ', '_', $request->service_name) . '.png';
-
+        $image_file = ServicesController::IMAGE_DIRECTORY . str_replace(' ', '_', $request->service_name) . '.png';
+        // Updating Values
         $service = new Service();
         $service->service_name =  $request->service_name;
         $service->service_chinese_name =  $request->service_chinese_name;
@@ -74,8 +75,7 @@ class ServicesController extends Controller
         $service->short_description =  $request->short_description;
         $service->detailed_description =  $request->detailed_description;
         // Handle Image 
-        $temp_file_location = Storage::disk('public')->allFiles('temp/')[0];
-        $copy_file = Storage::disk('public')->copy($temp_file_location, $image_file);
+        Storage::copy(Storage::allFiles(ServicesController::TEMP_DIRECTORY)[0], $image_file);
         // Saving 
         $service->save(); 
         return redirect('/services');  
@@ -89,12 +89,12 @@ class ServicesController extends Controller
         $img_array = explode(';', $encoded_image);
         $img_array_2 = explode(',', $img_array[1]);
         $this->deleteTempDirectory();
-        Storage::disk('public')->put($this->temp_directory . $img_name, base64_decode($img_array_2[1]));
+        Storage::put(ServicesController::TEMP_DIRECTORY . $img_name, base64_decode($img_array_2[1]));
         $this->changed_image = true;
-        return response()->json(["image_destination" => '/storage/'. $this->temp_directory . $img_name]);
+        return response()->json(["image_destination" => '/storage/'. ServicesController::TEMP_DIRECTORY . $img_name]);
      }
      public function deleteTempDirectory() {
-        Storage::disk('public')->deleteDirectory($this->temp_directory);
+        Storage::deleteDirectory(ServicesController::TEMP_DIRECTORY);
 
      }
 
@@ -131,7 +131,7 @@ class ServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // Validating Request
+        /***  Validating Request ***/
         $validatedData = $request->validate([
             'service_name' => 'required',
             'service_chinese_name' => 'required',
@@ -140,9 +140,9 @@ class ServicesController extends Controller
             'short_description' =>'required',
             'detailed_description' =>'required',
         ]);
-        $image_file = 'png/' . str_replace(' ', '_', $request->service_name) . '.png';
+        $image_file = 'png/' . str_replace(' ', '_',strtolower($request->service_name)) . '.png';
+        /***  Updating Values ***/
         $service = Service::findOrFail($id);
-        // Updating Values
         $service->service_name =  $request->service_name;
         $service->service_chinese_name =  $request->service_chinese_name;
         $service->slug =  str_replace(' ','_',strtolower($request->service_name)) ;
@@ -151,21 +151,21 @@ class ServicesController extends Controller
         $service->short_description =  $request->short_description;
         $service->detailed_description =  $request->detailed_description;
 
-        // Finish Handling Image 
-        if(Storage::disk('public')->exists($service->image) && $this->changed_image === false) {
-            $copy_file = Storage::disk('public')->copy($service->image, $this->temp_directory . $request->service_name);
-            Storage::disk('public')->delete($service->image);
-            $temp_file_location = Storage::disk('public')->allFiles('temp/')[0];
-            $copy_file = Storage::disk('public')->copy($temp_file_location, $image_file);
+        /*** Finish Handling Image ***/ 
+        // In order to update the filename when the service name has been changed I've created this statement. If the file has NOT been changed which is determined by the imageUpload function; and the image filename currently exists but the service name has been changed then this statement should run.
+        if(Storage::exists($service->image) && $this->changed_image === false) {
+            // We will backup the current file found in our image directory to the temp folder with the new name in the request.
+            Storage::copy($service->image, ServicesController::TEMP_DIRECTORY . $request->service_name);
+            // Since we've backuped the file in the temp directory; we will then delete it the old file from the image directory.
+            Storage::delete($service->image);
             $service->image = $image_file;
-            $service->save();
+            // Finally, we will copy the file from the temp directory back into the image directory.
+            Storage::copy(Storage::allFiles(ServicesController::TEMP_DIRECTORY)[0], $image_file);
         } else {
-            $temp_file_location = Storage::disk('public')->allFiles('temp/')[0];
-            $copy_file = Storage::disk('public')->copy($temp_file_location, $image_file);
-            $service->image = $image_file;
-            $service->save();
+            // If statement above is false then this can only mean that the file has been changed. We will copy the file in the temp folder and copy it to the image directory.
+            Storage::copy(Storage::allFiles(ServicesController::TEMP_DIRECTORY)[0], $image_file);
         }
-
+        $service->save();
         $this->deleteTempDirectory();
         return redirect('/services');
     }
@@ -179,7 +179,7 @@ class ServicesController extends Controller
     public function destroy($id)
     {
         $service = Service::findOrFail($id);
-        Storage::disk('public')->delete($service->image);
+        Storage::delete($service->image);
         $service->delete();
         return redirect('/services');
 
