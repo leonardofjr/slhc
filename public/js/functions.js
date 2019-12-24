@@ -11,6 +11,7 @@ $uploadCrop = $('#upload-demo').croppie({
     }
 });
 
+
 $('#service_image_file').on('change', function() {
     // Capturing file
     var reader = new FileReader();
@@ -26,6 +27,8 @@ $('#service_image_file').on('change', function() {
 
     // Display Modal
     $('#uploadImageModal').modal('show');
+    $('.service_image_preview').show();
+
 
     // Crop & Upload Image
 
@@ -55,3 +58,14 @@ $('#service_image_file').on('change', function() {
         })
     });
 });
+
+$('#service_form_create #uploadImageModal .close').on('click', function() {
+    $('#service_image_file').val('');
+    $('.service_image_preview').attr('src', '')
+    $('.service_image_preview').hide();
+})
+
+$('#service_form_edit #uploadImageModal .close').on('click', function() {
+    $('#service_image_file').val('');
+    $('.service_image_preview').attr('src', $('.service_image_preview').attr('src'))
+})
