@@ -1,10 +1,12 @@
 .btn-primary {
-    @include btn-border-line($primary-color, #fff);
     color: white!important;
     cursor: pointer!important;
+    background-color: $primary-color!important;
+    border: none;
+    padding:1em 1.5em;
+
 } 
 .btn-primary:hover {
-    @include btn-border-line($primary-color, #fff);
     color: white!important;
     cursor: pointer!important;
     background-color: $primary-color-hover!important;
@@ -25,3 +27,16 @@
     cursor: pointer!important;
     background-color: $secondary-color-hover!important;
 } 
+
+.btn-teritary {
+    color: white!important;
+    cursor: pointer!important;
+    background-color: $secondary-color!important;
+    border: none;
+    padding:1em 1.5em;
+}
+.btn-teritary {
+    color: white!important;
+    cursor: pointer!important;
+    background-color: $secondary-color-hover!important;
+}
