@@ -18,6 +18,7 @@ class ServicesController extends Controller
      * @return \Illuminate\Http\Response
      */
     private $temp_directory = 'temp/';
+    private $changed_image = false;
 
 
     public function index()
@@ -89,6 +90,7 @@ class ServicesController extends Controller
         $img_array_2 = explode(',', $img_array[1]);
         $this->deleteTempDirectory();
         Storage::disk('public')->put($this->temp_directory . $img_name, base64_decode($img_array_2[1]));
+        $this->changed_image = true;
         return response()->json(["image_destination" => '/storage/'. $this->temp_directory . $img_name]);
      }
      public function deleteTempDirectory() {
@@ -149,16 +151,21 @@ class ServicesController extends Controller
         $service->short_description =  $request->short_description;
         $service->detailed_description =  $request->detailed_description;
 
-        // Handle Image 
-        if (Storage::disk('public')->exists($image_file)) {
-            Storage::disk('public')->delete($image_file);
+        // Finish Handling Image 
+        if(Storage::disk('public')->exists($service->image) && $this->changed_image === false) {
+            $copy_file = Storage::disk('public')->copy($service->image, $this->temp_directory . $request->service_name);
+            Storage::disk('public')->delete($service->image);
+            $temp_file_location = Storage::disk('public')->allFiles('temp/')[0];
+            $copy_file = Storage::disk('public')->copy($temp_file_location, $image_file);
+            $service->image = $image_file;
+            $service->save();
+        } else {
+            $temp_file_location = Storage::disk('public')->allFiles('temp/')[0];
+            $copy_file = Storage::disk('public')->copy($temp_file_location, $image_file);
+            $service->image = $image_file;
+            $service->save();
         }
-        Storage::disk('public')->delete($service->image);
-        $service->image = $image_file;
-        $temp_file_location = Storage::disk('public')->allFiles('temp/')[0];
-        $copy_file = Storage::disk('public')->copy($temp_file_location, $image_file);
-        $service->save();
-        
+
         $this->deleteTempDirectory();
         return redirect('/services');
     }
