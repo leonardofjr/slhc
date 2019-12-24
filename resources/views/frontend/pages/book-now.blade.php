@@ -5,7 +5,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container py-5">
 
     <h5 class="text-center">Ready to book your treatment? </h5>
 

@@ -4,7 +4,7 @@
 @section('meta-description-content', 'Our practice revolves around the ancient healing arts of traditional healing.')
 
 @section('content')
-    <div class="container">
+    <div class="container py-5">
         <div class="pb-3">
             <h4 class="text-center">Find out more information</h4>
             <p class="text-center">If you would like to discuss our treatments, please contact us and we will be happy to provide with the information you need.</p>
