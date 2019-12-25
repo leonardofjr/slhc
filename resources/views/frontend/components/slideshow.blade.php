@@ -6,7 +6,12 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src='{{asset("imgs/qi-gong.png")}}' alt="First slide">
+      <picture>
+        <source class="d-block w-100" srcset={{asset("imgs/qi-gong.png")}} media="(min-width: 768px)">
+        <source class="d-block w-100" srcset={{asset("imgs/qi-gong-mobile-portrait.png")}} media="(min-width: 320px) and (orientation: portrait)">
+        <source class="d-block w-100" srcset={{asset("imgs/qi-gong-mobile-landscape.png")}} media="(min-width: 568px) and (orientation: landscape)">
+          <img class="d-block w-100" src="{{asset("imgs/qi-gong.png")}}" alt="">
+      </picture>
       <div class="center-carousel-content">
           <h2>PAIN & INJURY</h2>
           <p>Fast, Effective Results</p>
@@ -14,7 +19,12 @@
       </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src='{{asset("imgs/meditation.png")}}' alt="Second slide">
+      <picture>
+        <source class="d-block w-100" srcset={{asset("imgs/meditation.png")}} media="(min-width: 768px)">
+        <source class="d-block w-100" srcset={{asset("imgs/meditation-mobile-portrait.png")}} media="(min-width: 320px) and (orientation: portrait)">
+        <source class="d-block w-100" srcset={{asset("imgs/meditation-mobile-landscape.png")}} media="(min-width: 568px) and (orientation: landscape)">
+          <img class="d-block w-100" src="{{asset("imgs/meditation.png")}}" alt="">
+      </picture>
       <div class="center-carousel-content">
         <h2>STRESS & ANXIETY</h2>
         <p>Calm Your Mind and Body Down</p>
@@ -22,7 +32,12 @@
     </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src='{{asset("imgs/yoga.png")}}' alt="Third slide">
+      <picture>
+        <source class="d-block w-100" srcset={{asset("imgs/yoga.png")}} media="(min-width: 768px)">
+        <source class="d-block w-100" srcset={{asset("imgs/yoga-mobile-portrait.png")}} media="(min-width: 320px) and (orientation: portrait)">
+        <source class="d-block w-100" srcset={{asset("imgs/yoga-mobile-landscape.png")}} media="(min-width: 568px) and (orientation: landscape)">
+          <img class="d-block w-100" src="{{asset("imgs/yoga.png")}}" alt="">
+      </picture>
       <div class="center-carousel-content">
         <h2>CHAKRA HEALING</h2>
         <p>Keep Healthy, Happy and Vibrant</p>

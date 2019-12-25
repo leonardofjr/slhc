@@ -74,7 +74,7 @@ Stay in control of your health!<br><a href="/book-now"  ><button class="btn btn-
             </div>
             <div class="col-12 col-md-4 column-2">
                 <span class="img-wrap">
-                    <img src="assets/gif/acupuncture-points.gif" alt="">
+                    <img src="imgs/knee-pain.png" alt="">
                 </span>
             </div>
         </div>
