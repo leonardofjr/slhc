@@ -1,0 +1,19 @@
+
+  .center-carousel-content {
+    position: absolute;
+    width: 95%;
+    /* height: 50%; */
+    padding: 2em;
+    background-color: rgba(0, 0, 0, .2);
+    /* height: auto; */
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    color: #fff;
+    text-align: center;
+    transform: translate(-50%, -50%);
+
+    @include breakpoint(md) {
+        width: 60%;
+    }
+  }

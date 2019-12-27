@@ -266,90 +266,25 @@ h6 {
   background-color: rgba(255, 191, 45, 0.8) !important;
 }
 
-.jumbotron .home-cover {
-  background-image: url("/assets/gif/home-cover-mobile.gif");
-}
-
-.jumbotron .treatments-cover {
-  background-image: url("/assets/gif/treatments-cover-mobile.gif");
-}
-
-.jumbotron .testimonials-cover {
-  background-image: url("/assets/gif/testimonials-cover-mobile.gif");
-}
-
-.jumbotron .courses-cover {
-  background-image: url("/assets/gif/courses-cover-mobile.gif");
-}
-
-.jumbotron .traditional-chinese-medicine-cover {
-  background-image: url("/assets/gif/traditional-chinese-medicine-cover-mobile.gif");
-}
-
-.jumbotron .massage-cover {
-  background-image: url("/assets/gif/massage-cover-mobile.gif");
-}
-
-.jumbotron .reiki-cover {
-  background-image: url("/assets/gif/reiki-cover-mobile.gif");
-}
-
-.jumbotron .sacred-crystal-healing-cover {
-  background-image: url("/assets/gif/sacred-crystal-healing-cover-mobile.gif");
-}
-
-.jumbotron .inka-shamanic-healing-cover {
-  background-image: url("/assets/gif/inka-shamanic-healing-cover-mobile.gif");
-}
-
-.jumbotron .book-now-cover {
-  background-image: url("/assets/gif/book-now-cover-mobile.gif");
+.center-carousel-content {
+  position: absolute;
+  width: 95%;
+  /* height: 50%; */
+  padding: 2em;
+  background-color: rgba(0, 0, 0, 0.2);
+  /* height: auto; */
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  color: #fff;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 @media (min-width: 992px) {
-  .jumbotron div:nth-child(1) {
-    background-size: cover;
-    height: 100%;
-  }
-
-  .jumbotron .home-cover {
-    background-image: url("/assets/gif/home-cover.gif");
-  }
-
-  .jumbotron .treatments-cover {
-    background-image: url("/assets/gif/treatments-cover.gif");
-  }
-
-  .jumbotron .testimonials-cover {
-    background-image: url("/assets/gif/testimonials-cover.gif");
-  }
-
-  .jumbotron .courses-cover {
-    background-image: url("/assets/gif/courses-cover.gif");
-  }
-
-  .jumbotron .traditional-chinese-medicine-cover {
-    background-image: url("/assets/gif/traditional-chinese-medicine-ccover.gif");
-  }
-
-  .jumbotron .massage-cover {
-    background-image: url("/assets/gif/massage-cover.gif");
-  }
-
-  .jumbotron .reiki-cover {
-    background-image: url("/assets/gif/reiki-cover.gif");
-  }
-
-  .jumbotron .sacred-crystal-healing-cover {
-    background-image: url("/assets/gif/sacred-crystal-healing-cover.gif");
-  }
-
-  .jumbotron .inka-shamanic-healing-cover {
-    background-image: url("/assets/gif/inka-shamanic-healing-cover.gif");
-  }
-
-  .jumbotron .book-now-cover {
-    background-image: url("/assets/gif/book-now-cover.gif");
+  .center-carousel-content {
+    width: 60%;
   }
 }
 
@@ -847,21 +782,5 @@ footer ul {
 
 .modal-dialog {
   max-width: 800px !important;
-}
-
-.center-carousel-content {
-  position: absolute;
-  width: 60%;
-  /* height: 50%; */
-  padding: 2em;
-  background-color: rgba(0, 0, 0, 0.2);
-  /* height: auto; */
-  top: 50%;
-  left: 50%;
-  z-index: 1000;
-  color: #fff;
-  text-align: center;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
 }
 
