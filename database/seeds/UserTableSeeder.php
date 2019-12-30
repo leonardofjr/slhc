@@ -18,7 +18,7 @@ class UserTableSeeder extends Seeder
         $admin->fname = "Miguel";
         $admin->lname = "Felipa";
         $admin->email = "mfelipa@sacredlighthealing.ca";
-        $admin->password = bcrypt("admin");
+        $admin->password = bcrypt("sacredlighthealing1982");
         $admin->save();
         $admin->roles()->attach($role_admin);
         $admin->settings()->attach( $role_admin);
